@@ -16,17 +16,17 @@ export function FeatureStrip() {
         {items.map(({ Icon, label, text }, i) => (
           <div
             key={label}
-            className={`p-6 flex flex-col items-center gap-3 text-center
+            className={`p-7 flex flex-col items-center gap-4 text-center
               ${i !== 0 ? "lg:border-l border-gold-soft" : ""}
               ${i % 2 !== 0 ? "border-l lg:border-l border-gold-soft" : ""}
               ${i >= 2 ? "border-t md:border-t-0 border-gold-soft" : ""}
               ${i >= 3 && i < 6 ? "md:border-t lg:border-t-0 border-gold-soft" : ""}`}
           >
-            <div className="text-gold">
-              <Icon size={24} />
+            <div className="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center text-gold">
+              <Icon size={20} />
             </div>
-            <div className="text-[10px] tracking-[0.22em] uppercase text-parchment font-medium">{label}</div>
-            <div className="text-[12px] text-parchment/55 leading-snug max-w-[180px]">{text}</div>
+            <div className="font-display text-[20px] leading-tight text-parchment">{label}</div>
+            <div className="text-[11px] tracking-[0.22em] uppercase text-parchment/55 font-sans max-w-[200px]">{text}</div>
           </div>
         ))}
       </div>
