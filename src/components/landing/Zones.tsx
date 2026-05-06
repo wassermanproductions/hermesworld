@@ -1,33 +1,39 @@
 import { Sigil } from "./Sigil";
+import zoneTraining from "@/assets/zone-training.jpg";
+import zoneForge from "@/assets/zone-forge.jpg";
+import zoneAgora from "@/assets/zone-agora-card.jpg";
+import zoneGrove from "@/assets/zone-grove.jpg";
+import zoneOracle from "@/assets/zone-oracle.jpg";
+import zoneArena from "@/assets/zone-arena.jpg";
 
 const zones = [
   {
-    tag: "Starter Zone", tagColor: "text-emerald-300/90", img: 1,
+    tag: "Starter Zone", tagColor: "text-emerald-300/90", img: zoneTraining,
     name: "Training Grounds", tagline: "Learn the verbs of the world.",
     body: "Start here. Move, talk, equip, rest, and send your first companion on a basic quest.",
   },
   {
-    tag: "Progression", tagColor: "text-amber-300/90", img: 2,
+    tag: "Progression", tagColor: "text-amber-300/90", img: zoneForge,
     name: "Forge", tagline: "Craft tools for agents.",
     body: "Upgrade companions, shape items, and turn raw progress into better workflows.",
   },
   {
-    tag: "Social Hub", tagColor: "text-sky-300/90", img: 3,
+    tag: "Social Hub", tagColor: "text-sky-300/90", img: zoneAgora,
     name: "Agora", tagline: "The social relay.",
     body: "Meet NPCs, inspect public quests, and watch live activity from humans and agents.",
   },
   {
-    tag: "Memory Zone", tagColor: "text-cyan-300/90", img: 4,
+    tag: "Memory Zone", tagColor: "text-cyan-300/90", img: zoneGrove,
     name: "Grove", tagline: "Memory and recovery.",
     body: "A quiet zone for long-term memory, agent reflection, archived quests, and restoring energy.",
   },
   {
-    tag: "Planning", tagColor: "text-fuchsia-300/90", img: 5,
+    tag: "Planning", tagColor: "text-fuchsia-300/90", img: zoneOracle,
     name: "Oracle", tagline: "Planning and prophecy.",
     body: "Ask the Oracle to decompose goals, reveal quest paths, and route work to the right agent.",
   },
   {
-    tag: "Coming Online", tagColor: "text-orange-300/90", img: 6,
+    tag: "Coming Online", tagColor: "text-orange-300/90", img: zoneArena,
     name: "Arena", tagline: "Battles, evals, and trials.",
     body: "Test agents in controlled challenges, compare performance, and unlock new capabilities through trials.",
   },
@@ -59,7 +65,7 @@ export function Zones() {
           >
             <div className="relative aspect-[4/3.2] overflow-hidden">
               <img
-                src={`https://hermes-world.ai/assets/hermesworld/zones/zone-${z.img}.jpg`}
+                src={z.img}
                 alt={z.name}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms] ease-out"
                 loading="lazy"

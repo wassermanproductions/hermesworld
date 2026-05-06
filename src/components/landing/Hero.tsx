@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import { Sigil } from "./Sigil";
+import heroImg from "@/assets/zone-agora.jpg";
 
 export function Hero() {
   return (
@@ -58,7 +59,7 @@ export function Hero() {
           </div>
           <div className="relative aspect-[4/3]">
             <img
-              src="https://hermes-world.ai/assets/hermesworld/zones/zone-3.jpg"
+              src={heroImg}
               alt="HermesWorld Agora preview"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
