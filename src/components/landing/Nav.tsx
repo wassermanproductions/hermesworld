@@ -29,7 +29,7 @@ export function Nav() {
         <div className="ml-auto flex items-center gap-2.5 flex-none">
           <a
             href="https://hermes-world.ai/play/"
-            className="hidden lg:inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-body font-semibold px-4 py-2 rounded-md border border-gold/60 text-gold hover:bg-gold/10 transition-colors whitespace-nowrap"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-body font-semibold px-4 py-2 rounded-md border border-gold bg-gold/10 text-gold hover:bg-gold/20 transition-colors whitespace-nowrap"
           >
             <Diamond /> Enter the World <Diamond />
           </a>
