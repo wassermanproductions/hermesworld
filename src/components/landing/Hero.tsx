@@ -51,15 +51,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Floating medallion bottom-right */}
-      <div className="hidden md:block absolute bottom-8 right-8 w-[120px] h-[120px] z-10">
-        <div className="absolute inset-0 blur-2xl bg-gold/40 rounded-full" />
-        <img
-          src={sigilPedestal}
-          alt=""
-          className="relative w-full h-full object-contain drop-shadow-[0_0_40px_rgba(241,197,109,0.6)]"
-        />
-      </div>
     </section>
   );
 }
