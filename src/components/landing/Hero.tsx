@@ -1,5 +1,5 @@
 import { Play } from "lucide-react";
-import { Sigil } from "./Sigil";
+import { Sigil, WordmarkHorizontal } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 import sigilPedestal from "@/assets/sigil-pedestal.jpg";
 
@@ -22,9 +22,11 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative max-w-[1400px] mx-auto px-6 pt-[140px] pb-24 md:pt-[170px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
-        <h1 className="font-display font-light text-[80px] md:text-[140px] lg:text-[180px] leading-[0.95] tracking-[0.06em] text-gradient-gold drop-shadow-[0_6px_40px_rgba(0,0,0,0.85)]">
-          HERMESWORLD
-        </h1>
+        <h1 className="sr-only">HermesWorld</h1>
+        <WordmarkHorizontal
+          height={180}
+          className="w-full max-w-[1200px] drop-shadow-[0_6px_40px_rgba(0,0,0,0.85)]"
+        />
 
         {/* Divider with diamond */}
         <div className="mt-2 flex items-center gap-5 w-full max-w-2xl">
