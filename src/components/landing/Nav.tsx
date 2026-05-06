@@ -26,16 +26,16 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2.5 flex-none">
           <a
             href="https://hermes-world.ai/play/"
-            className="hidden sm:inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] font-body font-semibold px-6 py-2.5 rounded-md border border-gold/60 text-gold hover:bg-gold/10 transition-colors"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-body font-semibold px-4 py-2 rounded-md border border-gold/60 text-gold hover:bg-gold/10 transition-colors whitespace-nowrap"
           >
             <Diamond /> Enter the World <Diamond />
           </a>
           <a
             href="#preview"
-            className="inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.15em] font-body font-semibold px-6 py-2.5 rounded-md bg-parchment/5 border border-parchment/30 text-parchment hover:bg-parchment/10 transition-colors"
+            className="hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] font-body font-semibold px-4 py-2 rounded-md bg-parchment/5 border border-parchment/30 text-parchment hover:bg-parchment/10 transition-colors whitespace-nowrap"
           >
             <Play className="w-3.5 h-3.5 fill-current" /> Watch Preview
           </a>
