@@ -23,9 +23,6 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 pt-[180px] pb-32 md:pt-[220px] md:pb-40 min-h-[92vh] flex flex-col items-center justify-center text-center">
-        <p className="text-[10px] tracking-[0.32em] text-gold/90 uppercase mb-7 font-medium">
-          Hermes Workspace Experiment <span className="text-parchment/30 mx-2">//</span> Persistent Agent RPG
-        </p>
 
         <h1 className="font-display text-[68px] md:text-[120px] lg:text-[160px] leading-[0.9] tracking-[0.04em] text-gradient-gold drop-shadow-[0_4px_30px_rgba(0,0,0,0.7)]">
           HERMESWORLD
