@@ -28,12 +28,7 @@ export function Hero() {
           className="w-full max-w-[1200px] drop-shadow-[0_6px_40px_rgba(0,0,0,0.85)]"
         />
 
-        {/* Divider with diamond */}
-        <div className="mt-2 flex items-center gap-5 w-full max-w-2xl">
-          <span className="flex-1 h-px bg-gradient-to-r from-transparent to-gold/60" />
-          <span className="text-gold/90 text-sm">◇</span>
-          <span className="flex-1 h-px bg-gradient-to-l from-transparent to-gold/60" />
-        </div>
+        {/* Diamond underline ornament is built into WordmarkHorizontal */}
 
         {/* Spacer pushes CTAs to bottom */}
         <div className="flex-1" />
