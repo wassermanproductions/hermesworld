@@ -1,12 +1,13 @@
 import { Play } from "lucide-react";
 import { Sigil } from "./Sigil";
+import ctaVista from "@/assets/cta-vista.jpg";
 
 export function FinalCTA() {
   return (
     <section id="preview" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://hermes-world.ai/assets/hermesworld/zones/zone-5.jpg"
+          src={ctaVista}
           alt=""
           className="w-full h-full object-cover"
           loading="lazy"
