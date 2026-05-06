@@ -44,24 +44,8 @@ export function Hero() {
             Play in your browser. No downloads.
           </p>
 
-          {/* Feature badges */}
-          <div className="flex items-center mt-8 mb-10">
-            {[
-              { Icon: Globe, label: "Browser playable" },
-              { Icon: HardDrive, label: "Progress saves locally" },
-              { Icon: Zap, label: "No signup required" },
-            ].map(({ Icon, label }, i) => (
-              <div key={label} className={`flex items-center gap-2.5 text-[12px] font-body font-semibold text-gold/80 ${i > 0 ? "border-l border-gold/20 ml-5 pl-5" : ""}`}>
-                <div className="w-9 h-9 rounded-full border border-gold/40 flex items-center justify-center flex-none">
-                  <Icon className="w-4 h-4 text-gold" />
-                </div>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-
           {/* Gameplay screenshot — smaller, centered, with subtle frame */}
-          <div className="relative w-full max-w-[780px] mx-auto">
+          <div className="relative w-full max-w-[780px] mx-auto mt-8 mb-8">
             <div className="absolute -inset-4 bg-gradient-to-b from-gold/[0.06] to-transparent rounded-2xl blur-sm pointer-events-none" />
             <div className="relative rounded-xl overflow-hidden border border-gold/30 shadow-[0_20px_80px_-20px_rgba(241,197,109,0.2)]">
               <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/9] object-cover" />
@@ -110,6 +94,22 @@ export function Hero() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Feature badges */}
+          <div className="flex items-center mb-10">
+            {[
+              { Icon: Globe, label: "Browser playable" },
+              { Icon: HardDrive, label: "Progress saves locally" },
+              { Icon: Zap, label: "No signup required" },
+            ].map(({ Icon, label }, i) => (
+              <div key={label} className={`flex items-center gap-2.5 text-[12px] font-body font-semibold text-gold/80 ${i > 0 ? "border-l border-gold/20 ml-5 pl-5" : ""}`}>
+                <div className="w-9 h-9 rounded-full border border-gold/40 flex items-center justify-center flex-none">
+                  <Icon className="w-4 h-4 text-gold" />
+                </div>
+                <span>{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
