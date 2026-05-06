@@ -1,95 +1,197 @@
-type Props = { className?: string; size?: number; withRings?: boolean };
+type Props = { className?: string; size?: number };
 
-export function Sigil({ className, size = 24, withRings = false }: Props) {
-  const id = `sg-${Math.random().toString(36).slice(2, 8)}`;
+/** Caduceus sigil — gold medallion with rings, wings, staff, twin serpents */
+export function Sigil({ className, size = 64 }: { className?: string; size?: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 100 100"
+      viewBox="0 0 200 200"
       fill="none"
       className={className}
       aria-hidden
     >
       <defs>
-        <linearGradient id={`${id}-grad`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F6D98A" />
-          <stop offset="50%" stopColor="#E8B85C" />
-          <stop offset="100%" stopColor="#A6772E" />
+        <linearGradient id="sg-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#F8DE9A" />
+          <stop offset="45%" stopColor="#EAB85A" />
+          <stop offset="100%" stopColor="#9A6B26" />
         </linearGradient>
-        <radialGradient id={`${id}-glow`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#F6D98A" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#F6D98A" stopOpacity="0" />
+        <radialGradient id="sg-glow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stopColor="#F8DE9A" stopOpacity="0.35" />
+          <stop offset="70%" stopColor="#F8DE9A" stopOpacity="0.05" />
+          <stop offset="100%" stopColor="#F8DE9A" stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      {withRings && (
-        <>
-          <circle cx="50" cy="50" r="48" fill={`url(#${id}-glow)`} />
-          <circle cx="50" cy="50" r="46" stroke={`url(#${id}-grad)`} strokeWidth="0.4" opacity="0.6" />
-          <circle cx="50" cy="50" r="42" stroke={`url(#${id}-grad)`} strokeWidth="0.3" opacity="0.4" />
-          {/* tick marks */}
-          {Array.from({ length: 24 }).map((_, i) => {
-            const a = (i * Math.PI * 2) / 24;
-            const x1 = 50 + Math.cos(a) * 44;
-            const y1 = 50 + Math.sin(a) * 44;
-            const x2 = 50 + Math.cos(a) * (i % 6 === 0 ? 40 : 42);
-            const y2 = 50 + Math.sin(a) * (i % 6 === 0 ? 40 : 42);
-            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={`url(#${id}-grad)`} strokeWidth="0.4" opacity="0.7" />;
-          })}
-        </>
-      )}
+      {/* Soft outer glow */}
+      <circle cx="100" cy="100" r="95" fill="url(#sg-glow)" />
 
+      {/* Outer thin ring */}
+      <circle cx="100" cy="100" r="92" stroke="url(#sg-gold)" strokeWidth="0.8" opacity="0.85" />
+      {/* Decorative dotted track */}
+      {Array.from({ length: 60 }).map((_, i) => {
+        const a = (i * Math.PI * 2) / 60;
+        return (
+          <circle
+            key={i}
+            cx={100 + Math.cos(a) * 86}
+            cy={100 + Math.sin(a) * 86}
+            r={i % 5 === 0 ? 1.1 : 0.55}
+            fill="url(#sg-gold)"
+            opacity={i % 5 === 0 ? 0.95 : 0.55}
+          />
+        );
+      })}
       {/* Inner ring */}
-      <circle cx="50" cy="50" r="34" stroke={`url(#${id}-grad)`} strokeWidth="0.8" opacity="0.7" />
-      <circle cx="50" cy="50" r="30" stroke={`url(#${id}-grad)`} strokeWidth="0.4" opacity="0.4" />
+      <circle cx="100" cy="100" r="74" stroke="url(#sg-gold)" strokeWidth="1.1" opacity="0.95" />
+      {/* Cardinal tick marks */}
+      {[0, 90, 180, 270].map((deg) => {
+        const a = (deg * Math.PI) / 180;
+        return (
+          <line
+            key={deg}
+            x1={100 + Math.cos(a) * 74}
+            y1={100 + Math.sin(a) * 74}
+            x2={100 + Math.cos(a) * 80}
+            y2={100 + Math.sin(a) * 80}
+            stroke="url(#sg-gold)"
+            strokeWidth="1.2"
+          />
+        );
+      })}
 
-      {/* Caduceus — staff */}
-      <line x1="50" y1="20" x2="50" y2="82" stroke={`url(#${id}-grad)`} strokeWidth="1.6" strokeLinecap="round" />
+      {/* === Caduceus === */}
+      {/* Staff */}
+      <line
+        x1="100" y1="46" x2="100" y2="160"
+        stroke="url(#sg-gold)" strokeWidth="2.4" strokeLinecap="round"
+      />
+      {/* Top finial */}
+      <circle cx="100" cy="44" r="3.4" fill="url(#sg-gold)" />
+      <circle cx="100" cy="44" r="6" stroke="url(#sg-gold)" strokeWidth="1" fill="none" opacity="0.7" />
 
-      {/* Top orb */}
-      <circle cx="50" cy="20" r="2.4" fill={`url(#${id}-grad)`} />
+      {/* Wings — layered feathers */}
+      {/* Left wing */}
+      <g fill="url(#sg-gold)">
+        <path d="M100 60 C 86 56 70 56 58 64 C 70 64 80 62 90 62 Z" opacity="0.95" />
+        <path d="M100 64 C 84 62 66 64 52 74 C 66 72 78 70 92 70 Z" opacity="0.9" />
+        <path d="M100 68 C 82 70 64 74 50 86 C 66 82 80 78 94 76 Z" opacity="0.85" />
+      </g>
+      {/* Right wing */}
+      <g fill="url(#sg-gold)">
+        <path d="M100 60 C 114 56 130 56 142 64 C 130 64 120 62 110 62 Z" opacity="0.95" />
+        <path d="M100 64 C 116 62 134 64 148 74 C 134 72 122 70 108 70 Z" opacity="0.9" />
+        <path d="M100 68 C 118 70 136 74 150 86 C 134 82 120 78 106 76 Z" opacity="0.85" />
+      </g>
 
-      {/* Wings */}
+      {/* Twin serpents — sinuous double helix */}
       <path
-        d="M50 28 C 40 24, 30 25, 24 30 C 28 31, 33 31, 38 30 C 33 33, 28 35, 25 38 C 32 38, 40 36, 50 33 Z"
-        fill={`url(#${id}-grad)`}
+        d="M100 78
+           C 84 86 84 96 100 104
+           C 116 112 116 122 100 130
+           C 84 138 84 148 100 156"
+        stroke="url(#sg-gold)" strokeWidth="2.2" fill="none" strokeLinecap="round"
       />
       <path
-        d="M50 28 C 60 24, 70 25, 76 30 C 72 31, 67 31, 62 30 C 67 33, 72 35, 75 38 C 68 38, 60 36, 50 33 Z"
-        fill={`url(#${id}-grad)`}
+        d="M100 78
+           C 116 86 116 96 100 104
+           C 84 112 84 122 100 130
+           C 116 138 116 148 100 156"
+        stroke="url(#sg-gold)" strokeWidth="2.2" fill="none" strokeLinecap="round"
       />
 
-      {/* Snakes — sinuous double helix */}
-      <path
-        d="M50 36 C 40 42, 60 50, 50 56 C 40 62, 60 70, 50 78"
-        stroke={`url(#${id}-grad)`}
-        strokeWidth="1.4"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M50 36 C 60 42, 40 50, 50 56 C 60 62, 40 70, 50 78"
-        stroke={`url(#${id}-grad)`}
-        strokeWidth="1.4"
-        fill="none"
-        strokeLinecap="round"
-      />
-
-      {/* Snake heads */}
-      <circle cx="42" cy="40" r="1.4" fill={`url(#${id}-grad)`} />
-      <circle cx="58" cy="40" r="1.4" fill={`url(#${id}-grad)`} />
+      {/* Serpent heads */}
+      <ellipse cx="86" cy="80" rx="3" ry="2" fill="url(#sg-gold)" transform="rotate(-25 86 80)" />
+      <ellipse cx="114" cy="80" rx="3" ry="2" fill="url(#sg-gold)" transform="rotate(25 114 80)" />
     </svg>
   );
 }
 
+/** Horizontal wordmark — used in nav */
+export function WordmarkHorizontal({ className, height = 28 }: { className?: string; height?: number }) {
+  // Aspect ~ 6.2 : 1
+  const width = height * 6.2;
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 620 100"
+      className={className}
+      aria-label="HermesWorld"
+    >
+      <defs>
+        <linearGradient id="wm-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#F8DE9A" />
+          <stop offset="100%" stopColor="#C9963F" />
+        </linearGradient>
+      </defs>
+      <text
+        x="0" y="72"
+        fill="url(#wm-gold)"
+        fontFamily='"Cormorant Garamond", "Instrument Serif", serif'
+        fontWeight="500"
+        fontSize="74"
+        letterSpacing="2"
+      >
+        HERMESWORLD
+      </text>
+      {/* Underline diamond ornament */}
+      <g transform="translate(310 90)" fill="url(#wm-gold)">
+        <line x1="-90" y1="0" x2="-10" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
+        <polygon points="0,-4 6,0 0,4 -6,0" />
+        <line x1="10" y1="0" x2="90" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
+      </g>
+    </svg>
+  );
+}
+
+/** Stacked logo — sigil above HERMES / WORLD */
+export function LogoStacked({ className, width = 140 }: { className?: string; width?: number }) {
+  const height = width * 1.4;
+  return (
+    <div className={className} style={{ width, height }}>
+      <div className="flex flex-col items-center gap-2">
+        <Sigil size={width * 0.55} />
+        <div className="text-center leading-[0.95]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+          <div className="text-gold tracking-[0.18em] font-medium" style={{ fontSize: width * 0.16 }}>HERMES</div>
+          <div className="text-gold tracking-[0.18em] font-medium" style={{ fontSize: width * 0.16 }}>WORLD</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Icon-only sigil inside a circular badge — for app icon / favicon-style use */
+export function SigilBadge({ className, size = 96 }: { className?: string; size?: number }) {
+  return (
+    <div
+      className={className}
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "9999px",
+        background: "radial-gradient(circle at 30% 25%, #1B2433 0%, #0A0D12 75%)",
+        border: "1px solid rgba(241,196,109,0.35)",
+        boxShadow: "inset 0 1px 0 rgba(246,217,138,0.2), 0 12px 30px -10px rgba(0,0,0,0.7)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Sigil size={size * 0.78} />
+    </div>
+  );
+}
+
+/** Decorative radial ornament */
 export function RadialOrnament({ className, size = 200 }: { className?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 200 200" className={className} fill="none" aria-hidden>
       <defs>
         <linearGradient id="ro-g" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#F6D98A" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#A6772E" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#A6772E" stopOpacity="0.15" />
         </linearGradient>
       </defs>
       <circle cx="100" cy="100" r="98" stroke="url(#ro-g)" strokeWidth="0.5" />
@@ -127,7 +229,7 @@ export function RadialOrnament({ className, size = 200 }: { className?: string; 
   );
 }
 
-/** Brand iconography — thin gold outlines */
+/** Brand iconography — thin gold outline set */
 export const BrandIcons = {
   Sigil: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
