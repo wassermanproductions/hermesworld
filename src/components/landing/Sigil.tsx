@@ -127,7 +127,8 @@ export function WordmarkHorizontal({ className, height = 28 }: { className?: str
         </linearGradient>
       </defs>
       <text
-        x="0" y="72"
+        x="310" y="72"
+        textAnchor="middle"
         fill="url(#wm-gold)"
         fontFamily='"Canela", "Instrument Serif", serif'
         fontWeight="500"
