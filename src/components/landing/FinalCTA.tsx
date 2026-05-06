@@ -11,12 +11,11 @@ export function FinalCTA() {
       </div>
       <div className="relative max-w-[1240px] mx-auto px-6 py-24 md:py-32 text-center">
         <h2
-          className="text-[36px] md:text-[52px] leading-[1.1] text-[#F4E9D3] max-w-3xl mx-auto"
-          style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+          className="font-display text-[36px] md:text-[52px] leading-[1.1] text-parchment max-w-3xl mx-auto font-light"
         >
           Build with agents in a world, not a chat box.
         </h2>
-        <p className="mt-4 text-[14px] text-[#F4E9D3]/55 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-4 text-[14px] text-parchment/55 max-w-xl mx-auto leading-relaxed font-body font-normal">
           HermesWorld is the agent MMO where your work, your agents, and the world around you grow together.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">

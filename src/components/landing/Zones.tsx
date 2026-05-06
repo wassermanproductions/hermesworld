@@ -22,14 +22,13 @@ export function Zones() {
         {/* Left text */}
         <div className="lg:sticky lg:top-[80px]">
           <h2
-            className="text-[40px] md:text-[48px] leading-[1.05] text-[#F4E9D3]"
-            style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+            className="font-display text-[40px] md:text-[48px] leading-[1.05] text-parchment font-light"
           >
             Six zones.<br />
             One persistent<br />
             agent world.
           </h2>
-          <p className="mt-5 text-[13px] text-[#F4E9D3]/50 leading-relaxed">
+          <p className="mt-5 text-[13px] text-parchment/50 leading-relaxed font-body font-normal">
             Each zone has a purpose. Together, they form a living system of work, memory, social play, and mastery.
           </p>
           <a
@@ -57,10 +56,10 @@ export function Zones() {
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="text-[#F1C56D]"><z.Icon size={16} /></div>
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#F1C56D]">{z.name}</span>
+                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold font-body text-gold">{z.name}</span>
                 </div>
-                <div className="text-[9px] uppercase tracking-[0.15em] text-[#F4E9D3]/50 mb-0.5">{z.tag}</div>
-                <div className="text-[11px] text-[#F4E9D3]/60 leading-snug">{z.tagline}</div>
+                <div className="text-[9px] uppercase tracking-[0.15em] text-parchment/50 mb-0.5 font-body font-medium">{z.tag}</div>
+                <div className="text-[11px] text-parchment/60 leading-snug font-body font-normal">{z.tagline}</div>
               </div>
             </div>
           ))}
