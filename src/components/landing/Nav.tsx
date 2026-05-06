@@ -1,5 +1,4 @@
 import { Sigil, WordmarkHorizontal } from "./Sigil";
-import { Play } from "lucide-react";
 
 const links = [
   { label: "World", href: "#world" },
