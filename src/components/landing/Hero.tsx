@@ -4,7 +4,7 @@ import heroImg from "@/assets/hero-village.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="bg-obsidian relative overflow-hidden">
+    <section id="top" className="bg-black relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gold/[0.04] blur-[120px]" />
