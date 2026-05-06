@@ -4,14 +4,14 @@ import heroImg from "@/assets/hero-village.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="bg-obsidian relative overflow-hidden">
+    <section id="top" className="bg-black relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gold/[0.04] blur-[120px]" />
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gold/[0.06] blur-[80px]" />
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-8 pt-4 pb-14 bg-black">
+      <div className="relative max-w-[1400px] mx-auto px-8 pt-4 pb-14">
         {/* Centered hero content */}
         <div className="flex flex-col items-center text-center">
 
