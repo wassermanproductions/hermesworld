@@ -229,52 +229,83 @@ export function RadialOrnament({ className, size = 200 }: { className?: string; 
   );
 }
 
-/** Brand iconography — thin gold outline set */
+/** Brand iconography — simplified brand sheet (Sigil, Quest, Compass, World, Portal, Inventory, Scroll, Chat) */
 export const BrandIcons = {
   Sigil: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2 L14 6 L18 6 L15 9 L17 13 L12 11 L7 13 L9 9 L6 6 L10 6 Z" />
-      <circle cx="12" cy="12" r="9" opacity="0.4" />
+      <line x1="12" y1="3.5" x2="12" y2="20.5" />
+      <circle cx="12" cy="3.5" r="0.9" fill="currentColor" />
+      <path d="M12 7 C 9 6 6.5 6.5 5 8 C 7 8 9.5 7.6 12 8" />
+      <path d="M12 7 C 15 6 17.5 6.5 19 8 C 17 8 14.5 7.6 12 8" />
+      <path d="M12 10 C 9.5 11.5 9.5 13.5 12 15 C 14.5 16.5 14.5 18.5 12 20" />
+      <path d="M12 10 C 14.5 11.5 14.5 13.5 12 15 C 9.5 16.5 9.5 18.5 12 20" />
     </svg>
   ),
   Quest: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3 C 8 3 6 6 6 9 C 6 13 12 21 12 21 C 12 21 18 13 18 9 C 18 6 16 3 12 3 Z" />
-      <circle cx="12" cy="9" r="2.4" />
+      <path d="M9 18 H15" />
+      <path d="M10 21 H14" />
+      <path d="M8 14 C 6 12 6 9 8 7 C 10 5 14 5 16 7 C 18 9 18 12 16 14 C 15 15 15 16 15 18 H9 C 9 16 9 15 8 14 Z" />
+      <line x1="12" y1="9" x2="12" y2="11.5" />
+      <circle cx="12" cy="13" r="0.6" fill="currentColor" />
     </svg>
   ),
   Compass: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="9" />
-      <path d="M15 9 L13 13 L9 15 L11 11 Z" />
+      <path d="M14.5 9.5 L13 13 L9.5 14.5 L11 11 Z" />
+      <line x1="12" y1="3" x2="12" y2="5" />
+      <line x1="12" y1="19" x2="12" y2="21" />
+      <line x1="3" y1="12" x2="5" y2="12" />
+      <line x1="19" y1="12" x2="21" y2="12" />
     </svg>
   ),
   World: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12,3 21,8 21,16 12,21 3,16 3,8" />
-      <line x1="12" y1="3" x2="12" y2="21" opacity="0.4" />
-      <line x1="3" y1="8" x2="21" y2="16" opacity="0.4" />
-      <line x1="21" y1="8" x2="3" y2="16" opacity="0.4" />
+      <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" />
+      <line x1="12" y1="2" x2="12" y2="22" opacity="0.7" />
+      <line x1="3" y1="7" x2="21" y2="17" opacity="0.7" />
+      <line x1="21" y1="7" x2="3" y2="17" opacity="0.7" />
+      <polygon points="12,12 21,7 21,17" opacity="0.4" />
+      <polygon points="12,12 3,7 3,17" opacity="0.4" />
+    </svg>
+  ),
+  Portal: ({ size = 22 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 21 V11 C 5 7 8 4 12 4 C 16 4 19 7 19 11 V21" />
+      <line x1="3" y1="21" x2="21" y2="21" />
+      <line x1="12" y1="11" x2="12" y2="21" opacity="0.5" />
+    </svg>
+  ),
+  Inventory: ({ size = 22 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 6 V5 C 9 3.5 10 3 12 3 C 14 3 15 3.5 15 5 V6" />
+      <path d="M5 8 H19 V19 C 19 20 18 21 17 21 H7 C 6 21 5 20 5 19 Z" />
+      <line x1="9" y1="11" x2="9" y2="13" />
+      <line x1="15" y1="11" x2="15" y2="13" />
     </svg>
   ),
   Scroll: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 4 H17 C18 4 19 5 19 7 V17 C19 19 18 20 17 20 H7 C6 20 5 19 5 17 V4 Z" />
       <path d="M19 7 H21 V18 C21 19 20 20 19 20" />
-      <line x1="8" y1="8" x2="15" y2="8" />
-      <line x1="8" y1="11" x2="15" y2="11" />
-      <line x1="8" y1="14" x2="13" y2="14" />
+      <line x1="8" y1="9" x2="15" y2="9" />
+      <line x1="8" y1="12" x2="15" y2="12" />
+      <line x1="8" y1="15" x2="13" y2="15" />
     </svg>
   ),
+  Chat: ({ size = 22 }: { size?: number }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6 C 4 5 5 4 6 4 H18 C 19 4 20 5 20 6 V15 C 20 16 19 17 18 17 H10 L6 21 V17 C 5 17 4 16 4 15 Z" />
+      <circle cx="9" cy="10.5" r="0.7" fill="currentColor" />
+      <circle cx="12" cy="10.5" r="0.7" fill="currentColor" />
+      <circle cx="15" cy="10.5" r="0.7" fill="currentColor" />
+    </svg>
+  ),
+  // Aliases preserved for existing usages
   Star: ({ size = 22 }: { size?: number }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 3 L14 10 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10 10 Z" />
-    </svg>
-  ),
-  Portal: ({ size = 22 }: { size?: number }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 21 V9 C5 5 8 3 12 3 C16 3 19 5 19 9 V21" />
-      <ellipse cx="12" cy="9" rx="7" ry="2" />
     </svg>
   ),
   Wing: ({ size = 22 }: { size?: number }) => (
