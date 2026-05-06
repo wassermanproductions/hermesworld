@@ -35,7 +35,6 @@ export function Nav() {
           </a>
           <a
             href="#preview"
-            className="hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] font-body font-semibold px-4 py-2 rounded-md bg-parchment/5 border border-parchment/30 text-parchment hover:bg-parchment/10 transition-colors whitespace-nowrap"
             className="hidden lg:inline-flex items-center gap-2 text-[10px] lg:text-[11px] uppercase tracking-[0.1em] font-body font-semibold px-3 lg:px-4 py-2 rounded-md bg-parchment/5 border border-parchment/30 text-parchment hover:bg-parchment/10 transition-colors whitespace-nowrap"
           >
             <Play className="w-3.5 h-3.5 fill-current" /> Watch Preview
