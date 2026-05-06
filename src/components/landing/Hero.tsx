@@ -11,15 +11,16 @@ export function Hero() {
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gold/[0.06] blur-[80px]" />
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-8 pt-10 pb-14">
+      <div className="relative max-w-[1400px] mx-auto px-8 pt-4 pb-14">
         {/* Centered hero content */}
         <div className="flex flex-col items-center text-center">
 
           {/* Huge gold sigil */}
 
           {/* Large wordmark */}
-          <div className="mb-10">
-            <WordmarkHorizontal height={120} />
+          <div className="relative mb-10">
+            <div className="absolute inset-0 blur-[60px] bg-gold/15 rounded-full scale-125 pointer-events-none" />
+            <WordmarkHorizontal height={120} className="relative drop-shadow-[0_0_40px_rgba(241,197,109,0.3)]" />
           </div>
 
           {/* Tagline label */}
