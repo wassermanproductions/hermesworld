@@ -22,7 +22,7 @@ export function Hero() {
       <div className="absolute top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent z-10" />
 
       {/* Content */}
-      <div className="relative max-w-[1400px] mx-auto px-6 pt-[140px] pb-24 md:pt-[170px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
+      <div className="relative max-w-[1400px] mx-auto px-6 pt-[96px] pb-24 md:pt-[110px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
         <h1 className="sr-only">HermesWorld</h1>
         <div className="relative w-full max-w-[1200px]">
           {/* Soft warm halo behind the mark to bind it to the scene */}
