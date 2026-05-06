@@ -50,15 +50,15 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand palette — pulled from HermesWorld brand card */
-  --gold: #F1C46D;
-  --gold-soft: #F6D98A;
-  --bronze: #B68A4A;
-  --parchment: #F4E9D1;
-  --verdigris: #2E6B5E;
+  /* Brand palette — HermesWorld simplified brand sheet */
+  --gold: #F1C56D;
+  --gold-soft: #F8DE9A;
+  --bronze: #B8862B;
+  --parchment: #F4E9D3;
+  --verdigris: #2E6A63;
   --midnight: #0F1622;
-  --slate-deep: #182433;
-  --stone: #5A6F7E;
+  --slate-deep: #1B2433;
+  --stone: #8A8F98;
   --obsidian: #0A0D12;
 
   --background: #08090E;
