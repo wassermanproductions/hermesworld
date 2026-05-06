@@ -2,7 +2,7 @@ import heroLanding from "@/assets/hero-landing.png";
 
 export function Hero() {
   return (
-    <section id="top" className="relative w-full bg-black">
+    <section id="top" className="relative w-full bg-[#0a0f1a]">
       {/* The hero image as background */}
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
