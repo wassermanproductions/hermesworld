@@ -110,16 +110,13 @@ export function Sigil({ className, size = 64 }: { className?: string; size?: num
 
 /** Horizontal wordmark — used in nav */
 export function WordmarkHorizontal({ className, height = 28 }: { className?: string; height?: number }) {
-  // Aspect ~ 8.5 : 1 for wider spread
-  const width = height * 8.5;
+  const width = height * 6.2;
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 620 100"
+      viewBox="0 0 820 100"
       className={className}
-      preserveAspectRatio="xMidYMid meet"
-      style={{ width: '100%', maxWidth: width, height: 'auto' }}
       aria-label="HermesWorld"
     >
       <defs>
@@ -129,21 +126,21 @@ export function WordmarkHorizontal({ className, height = 28 }: { className?: str
         </linearGradient>
       </defs>
       <text
-        x="310" y="72"
+        x="410" y="72"
         textAnchor="middle"
         fill="url(#wm-gold)"
         fontFamily='"Canela", "Instrument Serif", serif'
         fontWeight="500"
         fontSize="74"
-        letterSpacing="2"
+        letterSpacing="18"
       >
         HERMESWORLD
       </text>
       {/* Underline diamond ornament */}
-      <g transform="translate(310 90)" fill="url(#wm-gold)">
-        <line x1="-90" y1="0" x2="-10" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
+      <g transform="translate(410 90)" fill="url(#wm-gold)">
+        <line x1="-120" y1="0" x2="-10" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
         <polygon points="0,-4 6,0 0,4 -6,0" />
-        <line x1="10" y1="0" x2="90" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
+        <line x1="10" y1="0" x2="120" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
       </g>
     </svg>
   );
