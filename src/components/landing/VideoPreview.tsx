@@ -8,7 +8,7 @@ export function VideoPreview() {
 
   return (
     <>
-      <section id="preview" className="relative w-full bg-black">
+      <section id="preview" className="relative w-full bg-[#0a0f1a]">
         <div className="relative w-full max-w-[1536px] mx-auto">
           <img
             src={previewImg}

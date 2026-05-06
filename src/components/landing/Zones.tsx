@@ -2,7 +2,7 @@ import zonesImg from "@/assets/zones-section.png";
 
 export function Zones() {
   return (
-    <section id="world" className="relative w-full bg-black">
+    <section id="world" className="relative w-full bg-[#0a0f1a]">
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
           src={zonesImg}
