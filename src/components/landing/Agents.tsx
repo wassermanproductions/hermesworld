@@ -1,124 +1,93 @@
 import { BrandIcons } from "./Sigil";
-import { X, Plus } from "lucide-react";
 
 const features = [
-  {
-    Icon: BrandIcons.Bot, title: "Agent companions",
-    body: "Recruit companions and assign roles. Scouts, builders, planners, and more — all with their own behaviors.",
-  },
-  {
-    Icon: BrandIcons.Compass, title: "Future agent takeover",
-    body: "You define the goal, then your companions continue the loop, report progress, and ask for approval.",
-  },
-  {
-    Icon: BrandIcons.Star, title: "Offline progression",
-    body: "The world keeps moving. Agents can continue quests, gather resources, and prepare updates for your return.",
-  },
+  { Icon: BrandIcons.Bot, title: "Agent Companions", body: "Recruit and specialize agents to expand your capabilities." },
+  { Icon: BrandIcons.Compass, title: "Autonomous Actions", body: "Agents can gather, craft, plan, and complete tasks on your behalf." },
+  { Icon: BrandIcons.Star, title: "Offline Progression", body: "Your agents keep working even when you're away." },
 ];
 
 const party = [
-  { name: "Atlas", role: "Scout", status: "Following", color: "bg-sky-500/15 text-sky-300 border-sky-400/30" },
-  { name: "Forge", role: "Builder", status: "Crafting", color: "bg-amber-500/15 text-amber-300 border-amber-400/30" },
-  { name: "Oracle", role: "Planner", status: "Planning", color: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-400/30" },
-];
-
-const verbs = [
-  "move_to", "talk_to", "equip", "travel", "attack", "loot",
-  "rest", "craft", "inspect", "accept_quest", "complete_quest",
+  { name: "Atlas Scout", level: 18, initials: "AS", color: "from-sky-700 to-sky-900" },
+  { name: "Forge Builder", level: 17, initials: "FB", color: "from-amber-700 to-amber-900" },
+  { name: "Oracle Planner", level: 19, initials: "OP", color: "from-fuchsia-700 to-fuchsia-900" },
 ];
 
 export function Agents() {
   return (
-    <section id="agents" className="max-w-7xl mx-auto px-6 py-20">
-      <div className="panel-elevated rounded-2xl p-8 md:p-12 grid lg:grid-cols-[1.15fr_1fr_1fr] gap-10">
+    <section id="agents" className="max-w-[1240px] mx-auto px-6 py-20">
+      <div className="grid lg:grid-cols-[280px_1fr_1fr] gap-6 items-start">
+        {/* Left text */}
         <div>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">Humans + Agents</p>
-          <h2 className="font-display text-[36px] md:text-[44px] mt-4 leading-[1.05] tracking-[-0.02em]">
-            Your agents live in <span className="italic text-gradient-gold">the world</span> with you.
+          <h2
+            className="text-[40px] md:text-[48px] leading-[1.05] text-[#F4E9D3]"
+            style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+          >
+            Your agents<br />
+            live in the<br />
+            world with<br />
+            you.
           </h2>
-          <p className="text-[14px] text-parchment/60 mt-4 leading-relaxed">
-            HermesWorld turns agent work into visible gameplay. Companions can move, talk,
-            equip items, complete quests, and eventually progress while you are offline.
+          <p className="mt-4 text-[13px] text-[#F4E9D3]/50 leading-relaxed">
+            They learn, act, and grow alongside you—online or offline.
           </p>
+
           <div className="mt-7 space-y-5">
             {features.map(({ Icon, title, body }) => (
-              <div key={title} className="flex gap-4">
-                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-gold/15 to-bronze/10 border border-gold/25 flex items-center justify-center flex-none text-gold">
-                  <Icon size={18} />
+              <div key={title} className="flex gap-3">
+                <div className="w-8 h-8 rounded-full border border-[#F1C56D]/30 flex items-center justify-center flex-none text-[#F1C56D]">
+                  <Icon size={16} />
                 </div>
                 <div>
-                  <div className="text-[14px] font-medium text-parchment">{title}</div>
-                  <div className="text-[12px] text-parchment/55 mt-1 leading-relaxed">{body}</div>
+                  <div className="text-[11px] uppercase tracking-[0.15em] font-semibold text-[#F1C56D]">{title}</div>
+                  <div className="text-[11px] text-[#F4E9D3]/50 mt-0.5 leading-relaxed">{body}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Party */}
-        <div className="panel rounded-xl p-4">
-          <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-parchment/65 mb-4 pb-3 border-b border-gold-soft">
-            <span>Your Party</span>
-            <X className="w-3 h-3" />
-          </div>
-          <div className="space-y-2.5">
+        {/* Party panel */}
+        <div className="border border-[#F1C56D]/15 rounded-xl bg-[#0F1622]/50 p-5">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[#F4E9D3]/50 mb-4 pb-3 border-b border-[#F1C56D]/10">Your Party</div>
+          <div className="grid grid-cols-3 gap-3">
             {party.map((p) => (
-              <div key={p.name} className="flex items-center gap-3 panel rounded-lg p-3">
-                <div className="w-11 h-11 rounded bg-gradient-to-br from-gold/30 via-bronze/40 to-slate-deep border border-gold/30 flex items-center justify-center text-[10px] font-display text-gold/90">
-                  {p.name[0]}
+              <div key={p.name} className="text-center">
+                <div className={`w-full aspect-square rounded-lg bg-gradient-to-br ${p.color} border border-[#F1C56D]/15 flex items-center justify-center text-[20px] font-bold text-[#F4E9D3]/60 mb-2`}>
+                  {p.initials}
                 </div>
-                <div className="flex-1">
-                  <div className="text-[13px] font-medium text-parchment">{p.name}</div>
-                  <div className="text-[11px] text-parchment/50">{p.role}</div>
+                <div className="text-[11px] text-[#F4E9D3] font-medium">{p.name}</div>
+                <div className="text-[10px] text-[#F4E9D3]/45">Level {p.level}</div>
+                {/* Stat icons */}
+                <div className="flex justify-center gap-1 mt-1.5">
+                  {["⚔️", "🛡️", "✨"].map((e) => (
+                    <span key={e} className="w-5 h-5 rounded-full bg-[#0A0D12]/60 flex items-center justify-center text-[8px]">{e}</span>
+                  ))}
                 </div>
-                <span className={`text-[10px] px-2 py-1 rounded border ${p.color}`}>{p.status}</span>
               </div>
             ))}
-            <button className="w-full text-[11px] text-parchment/55 border border-dashed border-gold/25 rounded-lg py-2.5 flex items-center justify-center gap-1.5 hover:border-gold/60 hover:text-gold transition-colors">
-              <Plus className="w-3 h-3" /> Invite Agent
-            </button>
           </div>
+          <button className="w-full mt-4 text-[11px] uppercase tracking-[0.15em] text-[#F4E9D3]/60 border border-[#F1C56D]/20 rounded-lg py-2.5 hover:border-[#F1C56D]/50 hover:text-[#F1C56D] transition-colors">
+            Manage Agents
+          </button>
         </div>
 
-        {/* Console */}
-        <div className="panel rounded-xl p-4 font-mono text-[11px] leading-[1.7]">
-          <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-parchment/65 mb-4 pb-3 border-b border-gold-soft font-sans">
-            <span>Agent Console</span>
-            <X className="w-3 h-3" />
-          </div>
-          <div className="space-y-1">
-            <div><span className="text-gold">{">"}</span> move_to(<span className="text-emerald-300">"Agora"</span>)</div>
-            <div className="text-parchment/65">Atlas joined your party.</div>
-            <div className="text-parchment/65">Oracle discovered 3 quest paths.</div>
-            <div className="text-parchment/65">Forge equipped: <span className="text-amber-300">Bronze Caduceus</span>.</div>
-            <div className="text-gold">Hermes Sigil +12</div>
-            <div className="text-parchment/65">Quest updated: Open the Northern Gate.</div>
-            <div><span className="text-gold">{">"}</span> talk_to(<span className="text-emerald-300">"Oracle"</span>)</div>
-            <div className="text-parchment/65">Oracle: The gate requires three sigils and a plan.</div>
-            <div><span className="text-gold">{">"}</span> accept_quest(<span className="text-emerald-300">"Northern Gate"</span>)</div>
-            <div className="text-parchment/65">Quest accepted: Open the Northern Gate.</div>
-            <div><span className="text-gold">{">"}</span> travel(<span className="text-emerald-300">"Oracle"</span>)</div>
-            <div className="text-parchment/65">Traveling to Oracle...</div>
-            <div className="text-gold animate-pulse">{">"} _</div>
+        {/* Agent Console */}
+        <div className="border border-[#F1C56D]/15 rounded-xl bg-[#0F1622]/50 p-5 font-mono text-[11px] leading-[1.8]">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[#F4E9D3]/50 mb-4 pb-3 border-b border-[#F1C56D]/10 font-sans">Agent Console</div>
+          <div className="space-y-0.5 text-[#F4E9D3]/55">
+            <div><span className="text-[#F1C56D]">{">"}</span> move_to(<span className="text-emerald-300">"Agora"</span>)</div>
+            <div className="text-[#F4E9D3]/40">{">>"} Arriving at Agora Commons...</div>
+            <div><span className="text-[#F1C56D]">{">"}</span> accept_quest(<span className="text-emerald-300">"Northern Gate"</span>)</div>
+            <div className="text-[#F4E9D3]/40">{">>"} Quest accepted: Northern Gate</div>
+            <div><span className="text-[#F1C56D]">{">"}</span> talk_to(<span className="text-emerald-300">"Oracle"</span>)</div>
+            <div className="text-[#F4E9D3]/40">{">>"} Oracle: The path is revealed to those who prepare.</div>
+            <div><span className="text-[#F1C56D]">{">"}</span> set_task(<span className="text-emerald-300">"gather_iron"</span>, <span className="text-amber-300">50</span>)</div>
+            <div className="text-[#F4E9D3]/40">{">>"} Task queued: gather_iron x50</div>
+            <div><span className="text-[#F1C56D]">{">"}</span> <span className="text-[#F1C56D]">status</span></div>
+            <div className="text-[#F4E9D3]/40">{">>"} 3 agents active · 2 tasks running</div>
+            <div className="text-[#F1C56D] animate-pulse">{">"} _</div>
           </div>
         </div>
-      </div>
-
-      {/* Verbs */}
-      <div className="mt-12 text-center">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-gold/80 mb-5 font-medium">
-          Every action maps to simple world verbs
-        </p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {verbs.map((v) => (
-            <span key={v} className="font-mono text-[12px] px-3.5 py-2 rounded-md panel border border-gold/15 text-parchment/85 hover:border-gold/40 hover:text-gold transition-colors">
-              `{v}`
-            </span>
-          ))}
-        </div>
-        <p className="mt-5 text-[12px] text-parchment/50 italic">
-          Readable game verbs. Real agent behavior underneath.
-        </p>
       </div>
     </section>
   );
