@@ -1,70 +1,115 @@
-import { BrandIcons } from "./Sigil";
+import { BrandIcons, Sigil } from "./Sigil";
 import zoneTraining from "@/assets/zone-training.jpg";
 import zoneForge from "@/assets/zone-forge.jpg";
 import zoneAgora from "@/assets/zone-agora-card.jpg";
 import zoneGrove from "@/assets/zone-grove.jpg";
 import zoneOracle from "@/assets/zone-oracle.jpg";
 import zoneArena from "@/assets/zone-arena.jpg";
+import { Crosshair } from "lucide-react";
 
 const zones = [
-  { img: zoneTraining, name: "Training Grounds", tag: "Starter zone", tagline: "Learn the verbs of the world.", Icon: BrandIcons.Compass },
-  { img: zoneForge, name: "Forge", tag: "Progression", tagline: "Craft tools and upgrade companions.", Icon: BrandIcons.Shield },
-  { img: zoneAgora, name: "Agora", tag: "Social hub", tagline: "Meet NPCs and watch live activity.", Icon: BrandIcons.Chat },
-  { img: zoneGrove, name: "Grove", tag: "Memory zone", tagline: "Archived quests and long-term memory.", Icon: BrandIcons.Star },
-  { img: zoneOracle, name: "Oracle", tag: "Planning", tagline: "Reveal quest paths and route work.", Icon: BrandIcons.Quest },
-  { img: zoneArena, name: "Arena", tag: "Trials", tagline: "Battle, evals, and controlled challenges.", Icon: BrandIcons.Trophy },
+  { img: zoneTraining, name: "Training Grounds", tagline: "Train your agent.\nMaster skills and\nrefine your craft.", Icon: BrandIcons.Compass },
+  { img: zoneForge, name: "Forge", tagline: "Forge tools\nand upgrade gear.\nEquip for deeper runs.", Icon: BrandIcons.Shield },
+  { img: zoneAgora, name: "Agora", tagline: "Meet, trade,\nand form alliances\nwithin the world.", Icon: BrandIcons.Chat },
+  { img: zoneGrove, name: "Grove", tagline: "Gather resources,\nharvest reagents,\nand craft with care.", Icon: BrandIcons.Star },
+  { img: zoneOracle, name: "Oracle", tagline: "Seek insight, unlock\nlore, and reveal\nwhat lies ahead.", Icon: BrandIcons.Quest },
+  { img: zoneArena, name: "Arena", tagline: "Hone skills, and\ncompete in challenges\nthat test mastery.", Icon: BrandIcons.Trophy },
 ];
 
 export function Zones() {
   return (
     <section id="world" className="max-w-[1240px] mx-auto px-6 py-20">
-      <div className="grid lg:grid-cols-[280px_1fr] gap-10 items-start">
-        {/* Left text */}
-        <div className="lg:sticky lg:top-[80px]">
-          <h2
-            className="font-display text-[40px] md:text-[48px] leading-[1.05] text-parchment font-light"
-          >
-            Six zones.<br />
-            One persistent<br />
-            agent world.
-          </h2>
-          <p className="mt-5 text-[13px] text-parchment/50 leading-relaxed font-body font-normal">
-            Each zone has a purpose. Together, they form a living system of work, memory, social play, and mastery.
-          </p>
-          <a
-            href="#world"
-            className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-medium px-5 py-2.5 rounded border border-[#F1C56D]/40 text-[#F4E9D3]/80 hover:border-[#F1C56D] transition-colors"
-          >
-            Explore the Map
-          </a>
-        </div>
+      {/* Top diamond ornament */}
+      <div className="flex justify-center mb-6">
+        <Diamond />
+      </div>
 
-        {/* Right — 3x2 zone cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {zones.map((z) => (
-            <div
-              key={z.name}
-              className="relative rounded-lg overflow-hidden group border border-[#F1C56D]/10 hover:border-[#F1C56D]/30 transition-all"
-            >
-              <img
-                src={z.img}
-                alt={z.name}
-                className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12]/90 via-[#0A0D12]/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <div className="text-[#F1C56D]"><z.Icon size={16} /></div>
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold font-body text-gold">{z.name}</span>
-                </div>
-                <div className="text-[9px] uppercase tracking-[0.15em] text-parchment/50 mb-0.5 font-body font-medium">{z.tag}</div>
-                <div className="text-[11px] text-parchment/60 leading-snug font-body font-normal">{z.tagline}</div>
+      <div className="border border-gold/20 rounded-2xl bg-midnight/60 p-6 md:p-10">
+        <div className="grid lg:grid-cols-[300px_1fr] gap-8 items-start">
+          {/* Left text */}
+          <div className="lg:sticky lg:top-[80px] flex flex-col justify-between min-h-[420px]">
+            <div>
+              <h2 className="font-display text-[42px] md:text-[52px] leading-[1.05] text-parchment font-light">
+                Six zones.<br />
+                One persistent<br />
+                agent world.
+              </h2>
+
+              {/* Diamond divider */}
+              <div className="flex items-center gap-2 mt-5 mb-6">
+                <div className="w-16 h-px bg-gold/50" />
+                <svg width="10" height="10" viewBox="0 0 10 10" className="text-gold" fill="currentColor"><polygon points="5,0 10,5 5,10 0,5" /></svg>
               </div>
+
+              <p className="text-[14px] text-parchment/60 leading-[1.7] font-body font-normal max-w-[280px]">
+                Each zone has a purpose,
+                together they form a living,
+                together they form a living
+                system, rich with mastery,
+                social ties, and history.
+              </p>
             </div>
-          ))}
+
+            <a
+              href="#world"
+              className="mt-8 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] font-body font-semibold px-6 py-3 rounded-md border border-gold/40 text-gold hover:border-gold hover:bg-gold/5 transition-colors w-fit"
+            >
+              <Crosshair className="w-4 h-4" />
+              Explore the Map
+            </a>
+          </div>
+
+          {/* Right — 3x2 zone cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {zones.map((z) => (
+              <div
+                key={z.name}
+                className="rounded-xl overflow-hidden border border-gold/20 hover:border-gold/40 transition-all bg-obsidian/40 group"
+              >
+                {/* Image */}
+                <div className="overflow-hidden">
+                  <img
+                    src={z.img}
+                    alt={z.name}
+                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Info below image */}
+                <div className="p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="text-gold flex-none mt-0.5">
+                      <z.Icon size={28} />
+                    </div>
+                    <div>
+                      <div className="text-[12px] uppercase tracking-[0.18em] font-body font-bold text-gold mb-1">
+                        {z.name}
+                      </div>
+                      <div className="text-[12px] text-parchment/55 leading-[1.6] font-body font-normal whitespace-pre-line">
+                        {z.tagline}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Bottom diamond ornament */}
+      <div className="flex justify-center mt-6">
+        <Diamond />
+      </div>
     </section>
+  );
+}
+
+function Diamond() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" className="text-gold/60" fill="currentColor">
+      <polygon points="6,0 12,6 6,12 0,6" />
+    </svg>
   );
 }
