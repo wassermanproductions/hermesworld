@@ -1,5 +1,5 @@
 import { Globe, HardDrive, Zap } from "lucide-react";
-import { Sigil, WordmarkHorizontal } from "./Sigil";
+import { WordmarkHorizontal } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 
 export function Hero() {
@@ -16,10 +16,6 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
 
           {/* Huge gold sigil */}
-          <div className="relative mb-6">
-            <div className="absolute inset-0 blur-[80px] bg-gold/20 rounded-full scale-150" />
-            <Sigil size={220} className="relative drop-shadow-[0_0_80px_rgba(241,197,109,0.4)]" />
-          </div>
 
           {/* Large wordmark */}
           <div className="mb-8">
