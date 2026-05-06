@@ -11,11 +11,11 @@ export function Hero() {
         <img
           src={heroImg}
           alt="HermesWorld village plaza"
-          className="w-full h-full object-cover brightness-125 contrast-75 saturate-90"
+          className="w-full h-full object-cover brightness-110 contrast-90"
         />
         {/* Vignettes */}
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-transparent to-obsidian/55" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(8,9,14,0.45)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/15 to-obsidian/72" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(8,9,14,0.65)_100%)]" />
       </div>
 
       {/* Top gold hairline under nav */}
