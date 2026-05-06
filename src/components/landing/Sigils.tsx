@@ -33,11 +33,8 @@ export function Sigils() {
 
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 blur-[60px] bg-gold/40 rounded-full scale-110" />
-              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold border-2 border-gold/60">
-                <div className="absolute inset-3 rounded-full border border-[rgba(255,255,255,0.25)]" />
-                <Sigil size={150} />
-              </div>
+              <div className="absolute inset-0 blur-[70px] bg-gold/40 rounded-full scale-125" />
+              <SigilBadge size={260} className="relative" />
             </div>
           </div>
 
