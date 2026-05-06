@@ -2,10 +2,10 @@ import { RadialOrnament, BrandIcons } from "./Sigil";
 import sigilPedestal from "@/assets/sigil-pedestal.jpg";
 
 const perks = [
-  { Icon: BrandIcons.Portal, title: "Unlocks", body: "Open new gates, zones, and questlines as your profile grows." },
-  { Icon: BrandIcons.Wing, title: "Cosmetics", body: "Customize your player, companions, banners, and world profile." },
-  { Icon: BrandIcons.Shield, title: "Agent Progression", body: "Upgrade companion abilities, roles, loadouts, and world actions." },
-  { Icon: BrandIcons.Trophy, title: "Quests", body: "Spend or earn Sigils through game-native quest loops and achievements." },
+  { Icon: BrandIcons.Portal, title: "Unlocks", color: "text-gold", body: "Open new gates, zones, and questlines as your profile grows." },
+  { Icon: BrandIcons.Wing, title: "Cosmetics", color: "text-sky-300", body: "Customize your player, companions, banners, and world profile." },
+  { Icon: BrandIcons.Shield, title: "Agent Progression", color: "text-emerald-300", body: "Upgrade companion abilities, roles, loadouts, and world actions." },
+  { Icon: BrandIcons.Trophy, title: "Quests", color: "text-fuchsia-300", body: "Spend or earn Sigils through game-native quest loops and achievements." },
 ];
 
 export function Sigils() {
