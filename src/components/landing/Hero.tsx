@@ -1,4 +1,4 @@
-import { Globe, HardDrive, Zap, X } from "lucide-react";
+import { Globe, HardDrive, Zap } from "lucide-react";
 import { Sigil } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 
