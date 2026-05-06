@@ -24,8 +24,9 @@ export function Hero() {
       {/* Content */}
       <div className="relative max-w-[1400px] mx-auto px-6 pt-[140px] pb-24 md:pt-[170px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
         <h1 className="sr-only">HermesWorld</h1>
-        <WordmarkHorizontal
-          height={180}
+        <img
+          src={wordmarkImg}
+          alt="HermesWorld"
           className="w-full max-w-[1200px] drop-shadow-[0_6px_40px_rgba(0,0,0,0.85)]"
         />
 
