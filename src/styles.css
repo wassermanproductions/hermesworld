@@ -5,8 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Cormorant Garamond", "Instrument Serif", ui-serif, Georgia, serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -46,98 +48,157 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 
-  /* Brand palette (HermesWorld) */
-  --gold: oklch(0.82 0.13 80);
-  --gold-soft: oklch(0.88 0.09 85);
-  --bronze: oklch(0.65 0.11 70);
-  --parchment: oklch(0.94 0.04 85);
-  --verdigris: oklch(0.55 0.07 175);
-  --midnight: oklch(0.22 0.03 250);
-  --slate-deep: oklch(0.28 0.03 250);
-  --stone: oklch(0.55 0.02 230);
-  --obsidian: oklch(0.13 0.015 250);
+  /* Brand palette — pulled from HermesWorld brand card */
+  --gold: #F1C46D;
+  --gold-soft: #F6D98A;
+  --bronze: #B68A4A;
+  --parchment: #F4E9D1;
+  --verdigris: #2E6B5E;
+  --midnight: #0F1622;
+  --slate-deep: #182433;
+  --stone: #5A6F7E;
+  --obsidian: #0A0D12;
 
-  /* Map dark-by-default semantics to brand */
-  --background: var(--obsidian);
-  --foreground: var(--parchment);
-  --card: oklch(0.18 0.02 250);
-  --card-foreground: var(--parchment);
-  --popover: oklch(0.18 0.02 250);
-  --popover-foreground: var(--parchment);
-  --primary: var(--gold);
-  --primary-foreground: oklch(0.15 0.02 250);
-  --secondary: oklch(0.24 0.025 250);
-  --secondary-foreground: var(--parchment);
-  --muted: oklch(0.22 0.02 250);
-  --muted-foreground: oklch(0.7 0.02 240);
-  --accent: oklch(0.3 0.04 80);
-  --accent-foreground: var(--parchment);
-  --destructive: oklch(0.62 0.22 27);
-  --destructive-foreground: var(--parchment);
-  --border: oklch(0.32 0.03 80 / 35%);
-  --input: oklch(0.3 0.02 250);
-  --ring: var(--gold);
+  --background: #08090E;
+  --foreground: #ECE3CC;
+  --card: #0F1622;
+  --card-foreground: #ECE3CC;
+  --popover: #0F1622;
+  --popover-foreground: #ECE3CC;
+  --primary: #F1C46D;
+  --primary-foreground: #1A1306;
+  --secondary: #182433;
+  --secondary-foreground: #ECE3CC;
+  --muted: #131B27;
+  --muted-foreground: #8B98A8;
+  --accent: #1A2535;
+  --accent-foreground: #F4E9D1;
+  --destructive: #C44A3F;
+  --destructive-foreground: #ECE3CC;
+  --border: rgba(241, 196, 109, 0.14);
+  --input: #182433;
+  --ring: #F1C46D;
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.88 0.13 85), oklch(0.72 0.13 70));
-  --gradient-world: linear-gradient(135deg, oklch(0.22 0.04 260), oklch(0.18 0.05 200));
-  --shadow-gold: 0 10px 40px -12px oklch(0.78 0.13 80 / 0.4);
-  --shadow-card: 0 20px 50px -20px oklch(0.05 0 0 / 0.7);
+  --gradient-gold: linear-gradient(135deg, #F6D98A 0%, #E8B85C 45%, #B68A4A 100%);
+  --gradient-gold-soft: linear-gradient(180deg, rgba(241,196,109,0.18), rgba(241,196,109,0.02));
+  --gradient-world: linear-gradient(180deg, #0F1622 0%, #08090E 100%);
+  --shadow-gold: 0 14px 50px -14px rgba(241, 196, 109, 0.45), 0 0 0 1px rgba(241,196,109,0.25) inset;
+  --shadow-card: 0 30px 60px -30px rgba(0,0,0,0.85);
+  --shadow-inset-gold: inset 0 1px 0 rgba(246, 217, 138, 0.25);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
     background-image:
-      radial-gradient(ellipse at top, oklch(0.22 0.04 250 / 0.8), transparent 60%),
-      radial-gradient(ellipse at bottom, oklch(0.18 0.05 200 / 0.5), transparent 70%);
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(241,196,109,0.06), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(46,107,94,0.08), transparent 70%),
+      linear-gradient(180deg, #08090E 0%, #0A0D12 100%);
     background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-serif);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
+    color: var(--parchment);
   }
 }
 
 @layer utilities {
+  .font-display { font-family: var(--font-serif); }
+  .font-mono { font-family: var(--font-mono); }
+
   .text-gold { color: var(--gold); }
   .bg-gold { background-color: var(--gold); }
-  .border-gold { border-color: oklch(0.78 0.13 80 / 0.5); }
+  .border-gold { border-color: rgba(241, 196, 109, 0.4); }
+  .border-gold-soft { border-color: rgba(241, 196, 109, 0.18); }
   .bg-gradient-gold { background-image: var(--gradient-gold); }
   .text-gradient-gold {
-    background-image: var(--gradient-gold);
+    background-image: linear-gradient(135deg, #F6D98A, #E8B85C 60%, #B68A4A);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-card { box-shadow: var(--shadow-card); }
+
   .panel {
-    background: linear-gradient(180deg, oklch(0.2 0.025 250 / 0.7), oklch(0.13 0.02 250 / 0.7));
-    border: 1px solid oklch(0.78 0.13 80 / 0.18);
-    backdrop-filter: blur(8px);
+    background:
+      linear-gradient(180deg, rgba(24, 36, 51, 0.6) 0%, rgba(15, 22, 34, 0.85) 100%);
+    border: 1px solid rgba(241, 196, 109, 0.12);
+    backdrop-filter: blur(10px);
   }
   .panel-glow {
     box-shadow:
-      inset 0 1px 0 oklch(0.78 0.13 80 / 0.15),
-      0 30px 60px -30px oklch(0.05 0 0 / 0.8);
+      inset 0 1px 0 rgba(246, 217, 138, 0.12),
+      0 30px 80px -30px rgba(0,0,0,0.9);
   }
+  .panel-elevated {
+    background:
+      linear-gradient(180deg, rgba(28, 40, 56, 0.85) 0%, rgba(15, 22, 34, 0.95) 100%);
+    border: 1px solid rgba(241, 196, 109, 0.16);
+    box-shadow:
+      inset 0 1px 0 rgba(246, 217, 138, 0.15),
+      0 1px 0 rgba(0,0,0,0.4),
+      0 30px 80px -30px rgba(0,0,0,0.9);
+  }
+
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(241,196,109,0.5), transparent);
+  }
+
   .starfield {
     background-image:
-      radial-gradient(1px 1px at 20% 30%, oklch(0.95 0.05 85 / 0.6), transparent 50%),
-      radial-gradient(1px 1px at 70% 60%, oklch(0.95 0.05 85 / 0.4), transparent 50%),
-      radial-gradient(1.5px 1.5px at 40% 80%, oklch(0.85 0.1 80 / 0.5), transparent 50%),
-      radial-gradient(1px 1px at 85% 20%, oklch(0.95 0.05 85 / 0.5), transparent 50%),
-      radial-gradient(1px 1px at 10% 70%, oklch(0.95 0.05 85 / 0.4), transparent 50%);
+      radial-gradient(1px 1px at 12% 20%, rgba(246,217,138,0.7), transparent 60%),
+      radial-gradient(1px 1px at 28% 64%, rgba(246,217,138,0.5), transparent 60%),
+      radial-gradient(1.5px 1.5px at 55% 30%, rgba(246,217,138,0.6), transparent 60%),
+      radial-gradient(1px 1px at 78% 70%, rgba(246,217,138,0.5), transparent 60%),
+      radial-gradient(1px 1px at 88% 18%, rgba(246,217,138,0.6), transparent 60%),
+      radial-gradient(1px 1px at 40% 88%, rgba(246,217,138,0.4), transparent 60%);
   }
+
+  .hairline-bottom {
+    box-shadow: inset 0 -1px 0 rgba(241,196,109,0.12);
+  }
+
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(241,196,109,0.6);
+    pointer-events: none;
+  }
+  .corner-frame::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+  .corner-frame::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+  .btn-gold {
+    background-image: var(--gradient-gold);
+    color: #1A1306;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -1px 0 rgba(0,0,0,0.2),
+      0 10px 30px -10px rgba(241,196,109,0.6);
+    border: 1px solid rgba(246,217,138,0.6);
+  }
+  .btn-ghost-gold {
+    background: rgba(15, 22, 34, 0.6);
+    border: 1px solid rgba(241,196,109,0.25);
+    color: var(--parchment);
+    backdrop-filter: blur(6px);
+  }
+  .btn-ghost-gold:hover { border-color: rgba(241,196,109,0.6); }
 }

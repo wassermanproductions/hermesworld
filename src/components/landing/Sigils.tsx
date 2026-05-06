@@ -1,29 +1,31 @@
-import { Sigil } from "./Sigil";
-import { DoorOpen, Sparkles, Shield, Trophy } from "lucide-react";
+import { Sigil, RadialOrnament, BrandIcons } from "./Sigil";
 
 const perks = [
-  { icon: DoorOpen, title: "Unlocks", body: "Open new gates, zones, and questlines as your profile grows." },
-  { icon: Sparkles, title: "Cosmetics", body: "Customize your player, companions, banners, and world profile." },
-  { icon: Shield, title: "Agent Progression", body: "Upgrade companion abilities, roles, loadouts, and world actions." },
-  { icon: Trophy, title: "Quests", body: "Spend or earn Sigils through game-native quest loops and achievements." },
+  { Icon: BrandIcons.Portal, title: "Unlocks", body: "Open new gates, zones, and questlines as your profile grows." },
+  { Icon: BrandIcons.Wing, title: "Cosmetics", body: "Customize your player, companions, banners, and world profile." },
+  { Icon: BrandIcons.Shield, title: "Agent Progression", body: "Upgrade companion abilities, roles, loadouts, and world actions." },
+  { Icon: BrandIcons.Trophy, title: "Quests", body: "Spend or earn Sigils through game-native quest loops and achievements." },
 ];
 
 export function Sigils() {
   return (
-    <section id="sigils" className="max-w-7xl mx-auto px-6 py-20">
-      <div className="panel panel-glow rounded-2xl p-8 md:p-12 relative overflow-hidden">
+    <section id="sigils" className="max-w-7xl mx-auto px-6 py-24">
+      <div className="panel-elevated rounded-2xl p-8 md:p-14 relative overflow-hidden">
         <div className="absolute inset-0 starfield opacity-40 pointer-events-none" />
-        <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-10 items-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 pointer-events-none">
+          <RadialOrnament size={520} />
+        </div>
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-12 items-center relative">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-gold/80">In-World Progression</p>
-            <h2 className="font-display text-4xl md:text-5xl mt-3">
-              Collect Hermes Sigils as you unlock the world.
+            <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-medium">In-World Progression</p>
+            <h2 className="font-display text-[40px] md:text-[52px] mt-4 leading-[1.05] tracking-[-0.02em]">
+              Collect Hermes Sigils <span className="italic text-gradient-gold">as you unlock</span> the world.
             </h2>
-            <p className="text-sm text-foreground/60 mt-4 leading-relaxed">
+            <p className="text-[14px] text-parchment/60 mt-5 leading-relaxed">
               Hermes Sigils are game-native collectibles used for progression inside HermesWorld:
               unlocks, cosmetics, agent upgrades, quests, and world access.
             </p>
-            <p className="text-xs text-foreground/40 mt-4 leading-relaxed">
+            <p className="text-[11px] text-parchment/40 mt-5 leading-relaxed italic">
               Hermes Sigils are presented as in-game lore and progression. They are not financial advice,
               not an investment promise, and not required to speculate on anything.
             </p>
@@ -31,19 +33,20 @@ export function Sigils() {
 
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 blur-3xl bg-gold/30 rounded-full" />
-              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold border border-gold/50">
-                <Sigil size={120} />
+              <div className="absolute inset-0 blur-[60px] bg-gold/40 rounded-full scale-110" />
+              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold border-2 border-gold/60">
+                <div className="absolute inset-3 rounded-full border border-[rgba(255,255,255,0.25)]" />
+                <Sigil size={150} />
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            {perks.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="panel rounded-lg p-4">
-                <Icon className="w-5 h-5 text-gold mb-2" />
-                <div className="text-sm font-medium">{title}</div>
-                <div className="text-xs text-foreground/55 mt-1 leading-relaxed">{body}</div>
+            {perks.map(({ Icon, title, body }) => (
+              <div key={title} className="panel rounded-lg p-5 hover:border-gold/40 transition-colors">
+                <div className="text-gold mb-3"><Icon size={22} /></div>
+                <div className="text-[10px] tracking-[0.22em] uppercase font-medium text-parchment">{title}</div>
+                <div className="text-[12px] text-parchment/55 mt-2 leading-relaxed">{body}</div>
               </div>
             ))}
           </div>

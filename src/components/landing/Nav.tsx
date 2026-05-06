@@ -1,5 +1,5 @@
 import { Sigil } from "./Sigil";
-import { Play, ArrowRight } from "lucide-react";
+import { Play } from "lucide-react";
 
 const links = [
   { label: "World", href: "#world" },
@@ -11,18 +11,20 @@ const links = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-obsidian/70 border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center gap-6">
-        <a href="#top" className="flex items-center gap-2">
-          <Sigil size={26} />
-          <span className="font-display text-lg tracking-wide">HermesWorld</span>
-          <span className="ml-2 text-[10px] font-medium uppercase tracking-widest border border-gold/40 text-gold rounded-full px-2 py-0.5">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[rgba(8,9,14,0.75)] border-b border-gold-soft">
+      <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center gap-6">
+        <a href="#top" className="flex items-center gap-2.5 group">
+          <Sigil size={28} />
+          <span className="font-display text-[22px] tracking-[0.04em] text-parchment leading-none">
+            Hermes<span className="text-gold">World</span>
+          </span>
+          <span className="ml-2 text-[9px] font-medium uppercase tracking-[0.25em] border border-gold/50 text-gold rounded-full px-2.5 py-1">
             Preview Build
           </span>
         </a>
-        <nav className="hidden md:flex items-center gap-7 mx-auto text-sm text-foreground/80">
+        <nav className="hidden md:flex items-center gap-8 mx-auto text-[13px] tracking-wide text-parchment/75">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-gold transition-colors">
+            <a key={l.href} href={l.href} className="hover:text-gold transition-colors uppercase text-[11px] tracking-[0.2em]">
               {l.label}
             </a>
           ))}
@@ -30,15 +32,15 @@ export function Nav() {
         <div className="ml-auto flex items-center gap-3">
           <a
             href="#preview"
-            className="hidden sm:inline-flex items-center gap-2 text-sm px-4 py-2 rounded-md border border-border hover:border-gold/50 transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-md btn-ghost-gold transition-colors"
           >
-            <Play className="w-3.5 h-3.5" /> Watch Preview
+            <Play className="w-3 h-3 fill-current" /> Watch Preview
           </a>
           <a
             href="https://hermes-world.ai/play/"
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md bg-gradient-gold text-primary-foreground shadow-gold hover:opacity-95 transition-opacity"
+            className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] font-medium px-4 py-2.5 rounded-md btn-gold"
           >
-            Enter HermesWorld <ArrowRight className="w-4 h-4" />
+            Enter HermesWorld <span aria-hidden>›</span>
           </a>
         </div>
       </div>
