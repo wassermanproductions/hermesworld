@@ -1,4 +1,4 @@
-import { Sigil } from "./Sigil";
+import { Sigil, WordmarkHorizontal } from "./Sigil";
 import { Play } from "lucide-react";
 
 const links = [
@@ -13,11 +13,9 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-[rgba(8,9,14,0.75)] border-b border-gold-soft">
       <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center gap-6">
-        <a href="#top" className="flex items-center gap-2.5 group">
-          <Sigil size={28} />
-          <span className="font-display text-[22px] tracking-[0.04em] text-parchment leading-none">
-            Hermes<span className="text-gold">World</span>
-          </span>
+        <a href="#top" className="flex items-center gap-3 group">
+          <Sigil size={32} />
+          <WordmarkHorizontal height={20} />
           <span className="ml-2 text-[9px] font-medium uppercase tracking-[0.25em] border border-gold/50 text-gold rounded-full px-2.5 py-1">
             Preview Build
           </span>
