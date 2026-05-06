@@ -40,22 +40,22 @@ export function Hero() {
         <div className="flex-1" />
 
         {/* CTAs */}
-        <div className="flex flex-wrap justify-center items-center gap-5 mb-4">
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
           <a
             href="#preview"
-            className="inline-flex items-center gap-3 px-9 py-4 rounded-md border border-gold/45 bg-obsidian/75 backdrop-blur-sm text-parchment hover:bg-obsidian/90 transition-colors"
+            className="inline-flex items-center gap-3 px-7 py-3 rounded-md border border-gold/45 bg-obsidian/70 backdrop-blur-sm text-parchment hover:border-gold/70 transition-colors"
           >
-            <span className="w-7 h-7 rounded-full border border-gold/60 flex items-center justify-center">
-              <Play className="w-3 h-3 fill-gold text-gold" />
+            <span className="w-6 h-6 rounded-full border border-gold/60 flex items-center justify-center">
+              <Play className="w-2.5 h-2.5 fill-gold text-gold" />
             </span>
-            <span className="font-display text-[22px] tracking-wide">Watch Preview</span>
+            <span className="font-display text-[18px] font-normal">Watch Preview</span>
           </a>
           <a
             href="https://hermes-world.ai/play/"
-            className="inline-flex items-center gap-4 px-10 py-4 rounded-md btn-gold shadow-[0_10px_40px_-10px_rgba(241,197,109,0.6)]"
+            className="inline-flex items-center gap-3 px-8 py-3 rounded-md btn-gold"
           >
-            <span className="font-display text-[22px] text-obsidian tracking-wide">Play Now</span>
-            <Sigil size={22} />
+            <span className="font-display text-[18px] text-obsidian">Play Now</span>
+            <Sigil size={18} />
           </a>
         </div>
       </div>
