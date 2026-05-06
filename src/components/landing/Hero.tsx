@@ -1,5 +1,5 @@
 import { Globe, HardDrive, Zap } from "lucide-react";
-import { Sigil, WordmarkHorizontal } from "./Sigil";
+import { Sigil } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 
 export function Hero() {
@@ -15,14 +15,6 @@ export function Hero() {
         <svg width="8" height="8" viewBox="0 0 8 8" className="text-gold/50" fill="currentColor">
           <polygon points="4,0 8,4 4,8 0,4" />
         </svg>
-      </div>
-
-      {/* Large centered HERMESWORLD wordmark */}
-      <div className="relative flex justify-center mb-6 px-8">
-        <div className="relative">
-          <div className="absolute inset-0 blur-[60px] bg-gold/15 rounded-full scale-125 pointer-events-none" />
-          <WordmarkHorizontal height={120} className="relative drop-shadow-[0_0_40px_rgba(241,197,109,0.3)]" />
-        </div>
       </div>
 
       <div className="relative max-w-[1400px] mx-auto px-8 lg:px-12 pb-12">
