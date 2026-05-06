@@ -24,11 +24,29 @@ export function Hero() {
       {/* Content */}
       <div className="relative max-w-[1400px] mx-auto px-6 pt-[140px] pb-24 md:pt-[170px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
         <h1 className="sr-only">HermesWorld</h1>
-        <img
-          src={wordmarkImg}
-          alt="HermesWorld"
-          className="w-full max-w-[1200px] drop-shadow-[0_6px_40px_rgba(0,0,0,0.85)]"
-        />
+        <div className="relative w-full max-w-[1200px]">
+          {/* Soft warm halo behind the mark to bind it to the scene */}
+          <div
+            className="absolute inset-0 -m-16 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(241,197,109,0.22) 0%, rgba(241,197,109,0.08) 35%, transparent 70%)",
+              filter: "blur(20px)",
+            }}
+          />
+          <img
+            src={wordmarkImg}
+            alt="HermesWorld"
+            className="relative w-full select-none"
+            style={{
+              mixBlendMode: "screen",
+              opacity: 0.95,
+              filter:
+                "drop-shadow(0 2px 0 rgba(0,0,0,0.55)) drop-shadow(0 10px 30px rgba(0,0,0,0.7)) drop-shadow(0 0 60px rgba(241,197,109,0.35))",
+            }}
+            draggable={false}
+          />
+        </div>
 
         {/* Diamond underline ornament is built into WordmarkHorizontal */}
 
