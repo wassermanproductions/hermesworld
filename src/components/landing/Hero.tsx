@@ -21,10 +21,20 @@ export function Hero() {
       <div className="absolute top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent z-10" />
 
       {/* Content */}
-      <div className="relative max-w-[1400px] mx-auto px-6 pt-[96px] pb-24 md:pt-[110px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
+      <div className="relative max-w-[1400px] mx-auto px-6 pt-[60px] pb-24 md:pt-[80px] md:pb-32 min-h-[100vh] flex flex-col items-center text-center">
         <h1 className="sr-only">HermesWorld</h1>
 
-        {/* Diamond underline ornament is built into WordmarkHorizontal */}
+        {/* Primary wordmark logo */}
+        <img
+          src={wordmarkImg}
+          alt="HermesWorld"
+          className="w-full max-w-[1100px] select-none"
+          style={{
+            filter:
+              "drop-shadow(0 2px 0 rgba(0,0,0,0.45)) drop-shadow(0 12px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 60px rgba(241,197,109,0.25))",
+          }}
+          draggable={false}
+        />
 
         {/* Spacer pushes CTAs to bottom */}
         <div className="flex-1" />
