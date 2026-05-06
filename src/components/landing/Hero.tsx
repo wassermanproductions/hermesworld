@@ -20,7 +20,7 @@ export function Hero() {
           {/* Large wordmark */}
           <div className="relative mb-10">
             <div className="absolute inset-0 blur-[60px] bg-gold/15 rounded-full scale-125 pointer-events-none" />
-            <WordmarkHorizontal height={120} className="relative drop-shadow-[0_0_40px_rgba(241,197,109,0.3)]" />
+            <WordmarkHorizontal height={140} className="relative drop-shadow-[0_0_40px_rgba(241,197,109,0.3)]" />
           </div>
 
           {/* Tagline label */}
