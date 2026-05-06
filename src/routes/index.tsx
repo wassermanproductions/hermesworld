@@ -48,7 +48,6 @@ function Index() {
         <Sigils />
         <FinalCTA />
       </main>
-      <Footer />
     </div>
   );
 }
