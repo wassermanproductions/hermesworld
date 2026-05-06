@@ -1,13 +1,27 @@
-import { BrandIcons } from "./Sigil";
+import agentsImg from "@/assets/agents-section.png";
 
-const features = [
-  { Icon: BrandIcons.Bot, title: "Agent Companions", body: "Recruit and specialize agents to expand your capabilities." },
-  { Icon: BrandIcons.Compass, title: "Autonomous Actions", body: "Agents can gather, craft, plan, and complete tasks on your behalf." },
-  { Icon: BrandIcons.Star, title: "Offline Progression", body: "Your agents keep working even when you're away." },
-];
+export function Agents() {
+  return (
+    <section id="agents" className="relative w-full bg-black">
+      <div className="relative w-full max-w-[1536px] mx-auto">
+        <img
+          src={agentsImg}
+          alt="Your agents live in the world with you — Agent Companions, Autonomous Actions, Offline Progression"
+          className="w-full h-auto block"
+          draggable={false}
+        />
 
-const party = [
-  { name: "Atlas Scout", level: 18, initials: "AS", color: "from-sky-700 to-sky-900" },
+        {/* Manage Agents button overlay */}
+        <a
+          href="#agents"
+          className="absolute cursor-pointer"
+          style={{ top: '82%', left: '30%', width: '30%', height: '6%' }}
+          aria-label="Manage Agents"
+        />
+      </div>
+    </section>
+  );
+}
   { name: "Forge Builder", level: 17, initials: "FB", color: "from-amber-700 to-amber-900" },
   { name: "Oracle Planner", level: 19, initials: "OP", color: "from-fuchsia-700 to-fuchsia-900" },
 ];
