@@ -1,7 +1,7 @@
 import { Play, Globe, Shield, User } from "lucide-react";
 import { Sigil } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
-import sigilPedestal from "@/assets/sigil-pedestal.jpg";
+
 
 export function Hero() {
   return (
