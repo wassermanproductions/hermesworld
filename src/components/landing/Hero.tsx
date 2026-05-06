@@ -67,7 +67,7 @@ export function Hero() {
           {/* Right — gameplay screenshot with HUD */}
           <div className="relative rounded-xl overflow-hidden border border-gold/40 z-20">
             <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/10] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent mx-0 px-0 pr-[28px] mb-0 mr-0 text-right" />
 
             {/* Player card top-left */}
             <div className="absolute top-2.5 left-2.5 bg-midnight/85 backdrop-blur-sm border border-gold/20 rounded-lg px-2.5 py-2 flex items-center gap-2.5">
