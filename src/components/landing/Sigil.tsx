@@ -127,21 +127,15 @@ export function WordmarkHorizontal({ className, height = 28 }: { className?: str
         </linearGradient>
       </defs>
       <text
-        x="0" y="72"
+        x="0" y="74"
         fill="url(#wm-gold)"
         fontFamily='"Cormorant Garamond", "Instrument Serif", serif'
-        fontWeight="500"
-        fontSize="74"
-        letterSpacing="2"
+        fontWeight="600"
+        fontSize="78"
+        letterSpacing="3"
       >
         HERMESWORLD
       </text>
-      {/* Underline diamond ornament */}
-      <g transform="translate(310 90)" fill="url(#wm-gold)">
-        <line x1="-90" y1="0" x2="-10" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
-        <polygon points="0,-4 6,0 0,4 -6,0" />
-        <line x1="10" y1="0" x2="90" y2="0" stroke="url(#wm-gold)" strokeWidth="1" />
-      </g>
     </svg>
   );
 }
