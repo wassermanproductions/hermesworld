@@ -22,7 +22,7 @@ export function Hero() {
       <div className="absolute top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent z-10" />
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-[180px] pb-32 md:pt-[220px] md:pb-40 min-h-[92vh] flex flex-col items-center justify-center text-center">
+      <div className="relative max-w-7xl mx-auto px-6 pt-[120px] pb-32 md:pt-[140px] md:pb-40 min-h-[92vh] flex flex-col items-center justify-start text-center">
 
         <h1 className="font-display text-[68px] md:text-[120px] lg:text-[160px] leading-[0.9] tracking-[0.04em] text-gradient-gold drop-shadow-[0_4px_30px_rgba(0,0,0,0.7)]">
           HERMESWORLD
