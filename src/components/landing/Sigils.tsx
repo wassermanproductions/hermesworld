@@ -1,4 +1,4 @@
-import { Sigil, RadialOrnament, BrandIcons } from "./Sigil";
+import { SigilBadge, RadialOrnament, BrandIcons } from "./Sigil";
 
 const perks = [
   { Icon: BrandIcons.Portal, title: "Unlocks", body: "Open new gates, zones, and questlines as your profile grows." },
