@@ -48,17 +48,17 @@ export function Hero() {
             {/* Divider */}
             <div className="w-full h-px bg-gold/20 mt-7 mb-5" />
 
-            <div className="flex items-center">
+            <div className="flex items-center pb-2">
               {[
                 { Icon: Globe, label: "Browser playable" },
                 { Icon: HardDrive, label: "Progress saves locally" },
                 { Icon: Zap, label: "No signup required" },
               ].map(({ Icon, label }, i) => (
-                <div key={label} className={`flex items-center gap-3 text-[13px] font-body font-medium text-parchment/70 ${i > 0 ? "border-l border-gold/20 ml-6 pl-6" : ""}`}>
-                  <div className="w-9 h-9 rounded-full border border-gold/40 flex items-center justify-center flex-none">
-                    <Icon className="w-4 h-4 text-gold" />
+                <div key={label} className={`flex items-center gap-3 text-[14px] font-body font-semibold text-gold ${i > 0 ? "border-l border-gold/25 ml-6 pl-6" : ""}`}>
+                  <div className="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center flex-none">
+                    <Icon className="w-5 h-5 text-gold" />
                   </div>
-                  <span className="font-body">{label}</span>
+                  <span>{label}</span>
                 </div>
               ))}
             </div>
