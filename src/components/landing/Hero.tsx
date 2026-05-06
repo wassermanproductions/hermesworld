@@ -65,7 +65,7 @@ export function Hero() {
           </div>
 
           {/* Right — gameplay screenshot with HUD */}
-          <div className="relative rounded-xl overflow-hidden border border-gold/15 z-20">
+          <div className="relative rounded-xl overflow-hidden border border-gold/40 z-20">
             <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/10] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent" />
 
