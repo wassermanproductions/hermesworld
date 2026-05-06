@@ -1,4 +1,5 @@
-import { SigilBadge, RadialOrnament, BrandIcons } from "./Sigil";
+import { RadialOrnament, BrandIcons } from "./Sigil";
+import sigilPedestal from "@/assets/sigil-pedestal.jpg";
 
 const perks = [
   { Icon: BrandIcons.Portal, title: "Unlocks", body: "Open new gates, zones, and questlines as your profile grows." },
@@ -32,9 +33,14 @@ export function Sigils() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 blur-[70px] bg-gold/40 rounded-full scale-125" />
-              <SigilBadge size={260} className="relative" />
+            <div className="relative w-[340px] h-[340px]">
+              <div className="absolute inset-0 blur-[90px] bg-gold/50 rounded-full scale-110" />
+              <img
+                src={sigilPedestal}
+                alt="Hermes Sigil pedestal"
+                className="relative w-full h-full object-cover rounded-full ring-1 ring-gold/30 shadow-[0_0_120px_rgba(241,197,109,0.35)]"
+                loading="lazy"
+              />
             </div>
           </div>
 
