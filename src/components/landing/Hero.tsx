@@ -1,77 +1,95 @@
-import { Play, Globe, Shield, User } from "lucide-react";
+import { Globe, Shield, Zap } from "lucide-react";
 import { Sigil } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 
-
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden -mt-[68px]">
-      {/* Background art */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="HermesWorld village plaza"
-          className="w-full h-full object-cover brightness-110 contrast-90"
-        />
-        {/* Vignettes */}
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/45 via-obsidian/10 to-obsidian/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(8,9,14,0.55)_100%)]" />
-      </div>
-
-      {/* Top gold hairline under nav */}
-      <div className="absolute top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent z-10" />
-
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-[80px] pb-32 md:pt-[90px] md:pb-40 min-h-[92vh] flex flex-col items-center justify-start text-center">
-
-        <h1 className="font-display text-[68px] md:text-[120px] lg:text-[160px] leading-[0.9] tracking-[0.04em] text-gradient-gold drop-shadow-[0_4px_30px_rgba(0,0,0,0.7)]">
-          HERMESWORLD
-        </h1>
-
-        {/* Divider with diamond */}
-        <div className="mt-6 flex items-center gap-4 w-full max-w-xl">
-          <span className="flex-1 h-px bg-gradient-to-r from-transparent to-gold/50" />
-          <span className="text-gold/80 text-xs">◇</span>
-          <span className="flex-1 h-px bg-gradient-to-l from-transparent to-gold/50" />
-        </div>
-
-        <p className="font-display mt-auto pt-20 max-w-2xl text-parchment text-[15px] md:text-[18px] tracking-[0.2em] uppercase leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
-          Step into a shared world of Hermes agents.<br className="hidden md:block" /> Train, build, and quest with builders worldwide.
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-9 flex flex-wrap justify-center gap-4">
-          <a
-            href="#preview"
-            className="inline-flex items-center gap-2.5 px-7 py-4 rounded-md btn-ghost-gold text-[13px] uppercase tracking-[0.2em]"
-          >
-            <Play className="w-3.5 h-3.5 fill-current" /> Watch Preview
-          </a>
-          <a
-            href="https://hermes-world.ai/play/"
-            className="inline-flex items-center gap-2.5 px-7 py-4 rounded-md btn-gold font-semibold text-[13px] uppercase tracking-[0.2em]"
-          >
-            Play Now <Sigil size={16} />
-          </a>
-        </div>
-
-        {/* Feature pills */}
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {[
-            { Icon: Globe, label: "Browser Playable" },
-            { Icon: Shield, label: "Progress Saves Locally" },
-            { Icon: User, label: "No Signup Required" },
-          ].map(({ Icon, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-md border border-gold/25 bg-obsidian/50 backdrop-blur-sm text-[11px] uppercase tracking-[0.18em] text-parchment/75"
-            >
-              <Icon className="w-3.5 h-3.5 text-gold" /> {label}
+    <section id="top" className="bg-[#0A0D12]">
+      <div className="max-w-[1240px] mx-auto px-6 pt-14 pb-16">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
+          {/* Left copy */}
+          <div className="pt-4">
+            <div className="flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-[#F1C56D]/80 mb-5">
+              <Sigil size={14} />
+              <span>The Agent MMO</span>
             </div>
-          ))}
+
+            <h1
+              className="text-[46px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#F4E9D3]"
+              style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+            >
+              Step into a<br />
+              shared world of<br />
+              Hermes agents.
+            </h1>
+
+            <p className="mt-5 text-[14px] text-[#F4E9D3]/55 leading-relaxed max-w-[380px]">
+              Train agents, build together, and quest across a living world.
+              Your progress is real. Your impact is shared.
+              Play in your browser. No downloads.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-4">
+              {[
+                { Icon: Globe, label: "Browser playable" },
+                { Icon: Shield, label: "Progress saves locally" },
+                { Icon: Zap, label: "No signup required" },
+              ].map(({ Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 text-[11px] text-[#F4E9D3]/65">
+                  <Icon className="w-3.5 h-3.5 text-[#F1C56D]" />
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — gameplay screenshot with HUD */}
+          <div className="relative rounded-xl overflow-hidden border border-[#F1C56D]/15">
+            <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/10] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12]/60 via-transparent to-transparent" />
+
+            {/* Player info top-left */}
+            <div className="absolute top-3 left-3 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-[#F1C56D]/30 border border-[#F1C56D]/50 flex items-center justify-center text-[10px] text-[#F1C56D] font-bold">E</div>
+              <div className="text-[10px]">
+                <div className="text-[#F4E9D3] font-medium">Eric</div>
+                <div className="text-[#F4E9D3]/50">Traveling Runner · Level 20</div>
+              </div>
+            </div>
+
+            {/* Stat orbs */}
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {[
+                { color: "bg-red-500", val: "HP", sub: "100" },
+                { color: "bg-blue-500", val: "MP", sub: "50" },
+                { color: "bg-green-500", val: "ST", sub: "35" },
+                { color: "bg-purple-500", val: "XP", sub: "72" },
+              ].map(({ color, val, sub }) => (
+                <div key={val} className={`w-8 h-8 rounded-full ${color}/80 flex flex-col items-center justify-center text-white border-2 border-[#0A0D12]`}>
+                  <span className="text-[6px] font-bold leading-none">{val}</span>
+                  <span className="text-[7px] leading-none">{sub}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* HUD top-right */}
+            <div className="absolute top-3 right-3 bg-[#0F1622]/80 backdrop-blur-sm border border-[#F1C56D]/15 rounded-md px-3 py-2 text-[9px] text-[#F4E9D3]/70">
+              <div className="text-[#F1C56D] font-medium text-[8px] uppercase tracking-widest mb-1">Agora Commons</div>
+            </div>
+
+            {/* Chat log bottom */}
+            <div className="absolute bottom-3 left-3 right-3 bg-[#0F1622]/85 backdrop-blur-sm border border-[#F1C56D]/10 rounded-md px-3 py-2 text-[9px] font-mono text-[#F4E9D3]/60">
+              <div>Eric: the wing is easy with Bolt</div>
+              <div>Athena: small success x2</div>
+              <div className="text-[#F1C56D]">OracleKnight: get builders</div>
+              <div className="flex items-center gap-2 mt-1">
+                <input className="flex-1 bg-[#0A0D12]/80 border border-[#F1C56D]/15 rounded px-2 py-1 text-[9px] text-[#F4E9D3]/80 outline-none" placeholder="Type a message..." readOnly />
+                <span className="text-[8px] text-[#F1C56D] bg-[#F1C56D]/15 px-2 py-0.5 rounded">SAY</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
     </section>
   );
 }

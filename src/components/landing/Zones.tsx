@@ -1,4 +1,4 @@
-import { Sigil } from "./Sigil";
+import { BrandIcons } from "./Sigil";
 import zoneTraining from "@/assets/zone-training.jpg";
 import zoneForge from "@/assets/zone-forge.jpg";
 import zoneAgora from "@/assets/zone-agora-card.jpg";
@@ -7,84 +7,64 @@ import zoneOracle from "@/assets/zone-oracle.jpg";
 import zoneArena from "@/assets/zone-arena.jpg";
 
 const zones = [
-  {
-    tag: "Starter Zone", tagColor: "text-emerald-300/90", img: zoneTraining,
-    name: "Training Grounds", tagline: "Learn the verbs of the world.",
-    body: "Start here. Move, talk, equip, rest, and send your first companion on a basic quest.",
-  },
-  {
-    tag: "Progression", tagColor: "text-amber-300/90", img: zoneForge,
-    name: "Forge", tagline: "Craft tools for agents.",
-    body: "Upgrade companions, shape items, and turn raw progress into better workflows.",
-  },
-  {
-    tag: "Social Hub", tagColor: "text-sky-300/90", img: zoneAgora,
-    name: "Agora", tagline: "The social relay.",
-    body: "Meet NPCs, inspect public quests, and watch live activity from humans and agents.",
-  },
-  {
-    tag: "Memory Zone", tagColor: "text-cyan-300/90", img: zoneGrove,
-    name: "Grove", tagline: "Memory and recovery.",
-    body: "A quiet zone for long-term memory, agent reflection, archived quests, and restoring energy.",
-  },
-  {
-    tag: "Planning", tagColor: "text-fuchsia-300/90", img: zoneOracle,
-    name: "Oracle", tagline: "Planning and prophecy.",
-    body: "Ask the Oracle to decompose goals, reveal quest paths, and route work to the right agent.",
-  },
-  {
-    tag: "Coming Online", tagColor: "text-orange-300/90", img: zoneArena,
-    name: "Arena", tagline: "Battles, evals, and trials.",
-    body: "Test agents in controlled challenges, compare performance, and unlock new capabilities through trials.",
-  },
+  { img: zoneTraining, name: "Training Grounds", tag: "Starter zone", tagline: "Learn the verbs of the world.", Icon: BrandIcons.Compass },
+  { img: zoneForge, name: "Forge", tag: "Progression", tagline: "Craft tools and upgrade companions.", Icon: BrandIcons.Shield },
+  { img: zoneAgora, name: "Agora", tag: "Social hub", tagline: "Meet NPCs and watch live activity.", Icon: BrandIcons.Chat },
+  { img: zoneGrove, name: "Grove", tag: "Memory zone", tagline: "Archived quests and long-term memory.", Icon: BrandIcons.Star },
+  { img: zoneOracle, name: "Oracle", tag: "Planning", tagline: "Reveal quest paths and route work.", Icon: BrandIcons.Quest },
+  { img: zoneArena, name: "Arena", tag: "Trials", tagline: "Battle, evals, and controlled challenges.", Icon: BrandIcons.Trophy },
 ];
 
 export function Zones() {
   return (
-    <section id="world" className="max-w-7xl mx-auto px-6 py-28">
-      <div className="text-center mb-16">
-        <div className="text-[10px] tracking-[0.35em] text-gold uppercase flex items-center justify-center gap-4 font-medium">
-          <span className="w-8 h-px bg-gold/40" />
-          <span>◇ The World Map ◇</span>
-          <span className="w-8 h-px bg-gold/40" />
-        </div>
-        <h2 className="font-display text-[44px] md:text-[60px] mt-5 leading-[1.05] tracking-[-0.02em]">
-          Six zones. <span className="italic text-gradient-gold">One persistent</span><br />agent world.
-        </h2>
-        <p className="mt-5 text-parchment/60 max-w-xl mx-auto text-[14px] leading-relaxed">
-          Every zone is built around a different kind of human-agent gameplay:
-          training, crafting, strategy, memory, prophecy, and evaluation.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-        {zones.map((z) => (
-          <article
-            key={z.name}
-            className="panel-elevated rounded-xl overflow-hidden flex flex-col group hover:border-gold/50 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-gold"
+    <section id="world" className="max-w-[1240px] mx-auto px-6 py-20">
+      <div className="grid lg:grid-cols-[280px_1fr] gap-10 items-start">
+        {/* Left text */}
+        <div className="lg:sticky lg:top-[80px]">
+          <h2
+            className="text-[40px] md:text-[48px] leading-[1.05] text-[#F4E9D3]"
+            style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
           >
-            <div className="relative aspect-[4/3.2] overflow-hidden">
+            Six zones.<br />
+            One persistent<br />
+            agent world.
+          </h2>
+          <p className="mt-5 text-[13px] text-[#F4E9D3]/50 leading-relaxed">
+            Each zone has a purpose. Together, they form a living system of work, memory, social play, and mastery.
+          </p>
+          <a
+            href="#world"
+            className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-medium px-5 py-2.5 rounded border border-[#F1C56D]/40 text-[#F4E9D3]/80 hover:border-[#F1C56D] transition-colors"
+          >
+            Explore the Map
+          </a>
+        </div>
+
+        {/* Right — 3x2 zone cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {zones.map((z) => (
+            <div
+              key={z.name}
+              className="relative rounded-lg overflow-hidden group border border-[#F1C56D]/10 hover:border-[#F1C56D]/30 transition-all"
+            >
               <img
                 src={z.img}
                 alt={z.name}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms] ease-out"
+                className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent" />
-              <span className={`absolute bottom-2.5 left-2.5 text-[8px] tracking-[0.25em] uppercase px-2.5 py-1 rounded panel font-medium ${z.tagColor}`}>
-                {z.tag}
-              </span>
-            </div>
-            <div className="p-5 flex-1 flex flex-col">
-              <h3 className="font-display text-[26px] leading-tight">{z.name}</h3>
-              <p className="text-[11px] text-gold/85 mt-1.5 italic">{z.tagline}</p>
-              <p className="text-[12px] text-parchment/55 mt-3 leading-relaxed flex-1">{z.body}</p>
-              <div className="mt-5 flex justify-center pt-4 border-t border-gold-soft">
-                <Sigil size={20} />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12]/90 via-[#0A0D12]/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="text-[#F1C56D]"><z.Icon size={16} /></div>
+                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#F1C56D]">{z.name}</span>
+                </div>
+                <div className="text-[9px] uppercase tracking-[0.15em] text-[#F4E9D3]/50 mb-0.5">{z.tag}</div>
+                <div className="text-[11px] text-[#F4E9D3]/60 leading-snug">{z.tagline}</div>
               </div>
             </div>
-          </article>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

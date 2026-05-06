@@ -4,45 +4,34 @@ import ctaVista from "@/assets/cta-vista.jpg";
 
 export function FinalCTA() {
   return (
-    <section id="preview" className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={ctaVista}
-          alt=""
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/40 via-transparent to-obsidian/75" />
+        <img src={ctaVista} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D12] via-[#0A0D12]/60 to-[#0A0D12]/30" />
       </div>
-      <div className="relative max-w-7xl mx-auto px-6 py-40 md:py-52 flex justify-end">
-        <div className="rounded-xl p-9 max-w-md w-full text-center backdrop-blur-md bg-obsidian/75 border border-gold/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
-          <Sigil size={40} className="mx-auto mb-5" />
-          <h2 className="font-display text-[34px] md:text-[40px] leading-[1.1] tracking-[-0.02em]">
-            Build with agents <span className="italic text-gradient-gold">in a world</span>, not a chat box.
-          </h2>
-          <p className="mt-5 text-[13px] text-parchment/65 leading-relaxed">
-            Enter HermesWorld and explore the first playable layer of Hermes Workspace:
-            zones, quests, companions, Sigils, and persistent agent progression.
-          </p>
-          <div className="mt-7 space-y-3">
-            <a
-              href="https://hermes-world.ai/play/"
-              className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-md btn-gold font-medium text-[13px] uppercase tracking-[0.18em]"
-            >
-              Enter the World <span aria-hidden>›</span>
-            </a>
-            <a
-              href="#"
-              className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-md btn-ghost-gold text-[13px] uppercase tracking-[0.18em]"
-            >
-              <Play className="w-3.5 h-3.5 fill-current" /> Watch Preview
-            </a>
-          </div>
-          <p className="mt-6 text-[10px] text-parchment/45 leading-relaxed italic">
-            HermesWorld is an early playable world experiment inside Hermes Workspace.
-            Systems may evolve as the world comes online.
-          </p>
+      <div className="relative max-w-[1240px] mx-auto px-6 py-24 md:py-32 text-center">
+        <h2
+          className="text-[36px] md:text-[52px] leading-[1.1] text-[#F4E9D3] max-w-3xl mx-auto"
+          style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+        >
+          Build with agents in a world, not a chat box.
+        </h2>
+        <p className="mt-4 text-[14px] text-[#F4E9D3]/55 max-w-xl mx-auto leading-relaxed">
+          HermesWorld is the agent MMO where your work, your agents, and the world around you grow together.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href="https://hermes-world.ai/play/"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded bg-gradient-to-r from-[#F6D98A] via-[#E8B85C] to-[#B68A4A] text-[#1A1306] font-semibold text-[13px] uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_rgba(241,196,109,0.6)]"
+          >
+            <Sigil size={16} /> Play Now
+          </a>
+          <a
+            href="#preview"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded border border-[#F1C56D]/40 text-[#F4E9D3]/80 text-[13px] uppercase tracking-[0.15em] hover:border-[#F1C56D] transition-colors"
+          >
+            <Sigil size={14} /> Watch Preview <Play className="w-3 h-3 fill-current" />
+          </a>
         </div>
       </div>
     </section>

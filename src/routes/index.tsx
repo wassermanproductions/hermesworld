@@ -4,6 +4,7 @@ import { Hero } from "@/components/landing/Hero";
 import { FeatureStrip } from "@/components/landing/FeatureStrip";
 import { Zones } from "@/components/landing/Zones";
 import { Agents } from "@/components/landing/Agents";
+import { VideoPreview } from "@/components/landing/VideoPreview";
 import { Sigils } from "@/components/landing/Sigils";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
@@ -43,6 +44,7 @@ function Index() {
         <FeatureStrip />
         <Zones />
         <Agents />
+        <VideoPreview />
         <Sigils />
         <FinalCTA />
       </main>
