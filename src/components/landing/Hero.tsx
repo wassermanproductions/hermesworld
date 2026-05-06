@@ -15,15 +15,14 @@ export function Hero() {
             </div>
 
             <h1
-              className="text-[46px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#F4E9D3]"
-              style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+              className="font-display text-[46px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-parchment font-light"
             >
               Step into a<br />
               shared world of<br />
               Hermes agents.
             </h1>
 
-            <p className="mt-5 text-[14px] text-[#F4E9D3]/55 leading-relaxed max-w-[380px]">
+            <p className="mt-5 text-[14px] font-body font-normal text-parchment/55 leading-relaxed max-w-[380px]">
               Train agents, build together, and quest across a living world.
               Your progress is real. Your impact is shared.
               Play in your browser. No downloads.
@@ -35,8 +34,8 @@ export function Hero() {
                 { Icon: Shield, label: "Progress saves locally" },
                 { Icon: Zap, label: "No signup required" },
               ].map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-[11px] text-[#F4E9D3]/65">
-                  <Icon className="w-3.5 h-3.5 text-[#F1C56D]" />
+                <div key={label} className="flex items-center gap-2 text-[11px] font-body font-medium text-parchment/65">
+                  <Icon className="w-3.5 h-3.5 text-gold" />
                   <span>{label}</span>
                 </div>
               ))}
@@ -52,8 +51,8 @@ export function Hero() {
             <div className="absolute top-3 left-3 flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-[#F1C56D]/30 border border-[#F1C56D]/50 flex items-center justify-center text-[10px] text-[#F1C56D] font-bold">E</div>
               <div className="text-[10px]">
-                <div className="text-[#F4E9D3] font-medium">Eric</div>
-                <div className="text-[#F4E9D3]/50">Traveling Runner · Level 20</div>
+                <div className="text-parchment font-medium font-body">Eric</div>
+                <div className="text-parchment/50 font-body">Traveling Runner · Level 20</div>
               </div>
             </div>
 
@@ -73,18 +72,18 @@ export function Hero() {
             </div>
 
             {/* HUD top-right */}
-            <div className="absolute top-3 right-3 bg-[#0F1622]/80 backdrop-blur-sm border border-[#F1C56D]/15 rounded-md px-3 py-2 text-[9px] text-[#F4E9D3]/70">
-              <div className="text-[#F1C56D] font-medium text-[8px] uppercase tracking-widest mb-1">Agora Commons</div>
+              <div className="absolute top-3 right-3 bg-midnight/80 backdrop-blur-sm border border-gold/15 rounded-md px-3 py-2 text-[9px] text-parchment/70">
+              <div className="text-gold font-semibold font-body text-[8px] uppercase tracking-widest mb-1">Agora Commons</div>
             </div>
 
             {/* Chat log bottom */}
-            <div className="absolute bottom-3 left-3 right-3 bg-[#0F1622]/85 backdrop-blur-sm border border-[#F1C56D]/10 rounded-md px-3 py-2 text-[9px] font-mono text-[#F4E9D3]/60">
+            <div className="absolute bottom-3 left-3 right-3 bg-midnight/85 backdrop-blur-sm border border-gold/10 rounded-md px-3 py-2 text-[9px] font-mono text-parchment/60">
               <div>Eric: the wing is easy with Bolt</div>
               <div>Athena: small success x2</div>
-              <div className="text-[#F1C56D]">OracleKnight: get builders</div>
+              <div className="text-gold">OracleKnight: get builders</div>
               <div className="flex items-center gap-2 mt-1">
-                <input className="flex-1 bg-[#0A0D12]/80 border border-[#F1C56D]/15 rounded px-2 py-1 text-[9px] text-[#F4E9D3]/80 outline-none" placeholder="Type a message..." readOnly />
-                <span className="text-[8px] text-[#F1C56D] bg-[#F1C56D]/15 px-2 py-0.5 rounded">SAY</span>
+                <input className="flex-1 bg-obsidian/80 border border-gold/15 rounded px-2 py-1 text-[9px] text-parchment/80 outline-none font-body" placeholder="Type a message..." readOnly />
+                <span className="text-[8px] text-gold bg-gold/15 px-2 py-0.5 rounded font-bold font-body">SAY</span>
               </div>
             </div>
           </div>

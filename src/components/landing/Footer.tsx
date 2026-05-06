@@ -17,26 +17,26 @@ export function Footer() {
             <Sigil size={24} />
             <WordmarkHorizontal height={16} />
           </div>
-          <p className="text-[11px] text-[#F4E9D3]/40 leading-relaxed">
+          <p className="text-[11px] text-parchment/40 leading-relaxed font-body font-normal">
             Where invisible progress becomes play.
           </p>
         </div>
         {cols.map((c) => (
           <div key={c.title}>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-[#F1C56D] font-semibold mb-3">{c.title}</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold font-body mb-3">{c.title}</div>
             {c.links.map((l) => (
-              <a key={l} href="#" className="block text-[12px] text-[#F4E9D3]/50 hover:text-[#F1C56D] transition-colors mb-1.5">{l}</a>
+              <a key={l} href="#" className="block text-[12px] text-parchment/50 hover:text-gold transition-colors mb-1.5 font-body font-normal">{l}</a>
             ))}
           </div>
         ))}
       </div>
       <div className="border-t border-[#F1C56D]/10 py-5 max-w-[1240px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
-        <div className="text-[10px] text-[#F4E9D3]/35">© 2025 HermesWorld. All rights reserved.</div>
-        <div className="flex gap-4 text-[#F4E9D3]/40">
-          <a href="#" aria-label="Discord"><MessageCircle className="w-4 h-4 hover:text-[#F1C56D] transition-colors" /></a>
-          <a href="#" aria-label="X"><Twitter className="w-4 h-4 hover:text-[#F1C56D] transition-colors" /></a>
-          <a href="#" aria-label="YouTube"><Youtube className="w-4 h-4 hover:text-[#F1C56D] transition-colors" /></a>
-          <a href="#" aria-label="GitHub"><Github className="w-4 h-4 hover:text-[#F1C56D] transition-colors" /></a>
+        <div className="text-[10px] text-parchment/35 font-body">© 2025 HermesWorld. All rights reserved.</div>
+        <div className="flex gap-4 text-parchment/40">
+          <a href="#" aria-label="Discord"><MessageCircle className="w-4 h-4 hover:text-gold transition-colors" /></a>
+          <a href="#" aria-label="X"><Twitter className="w-4 h-4 hover:text-gold transition-colors" /></a>
+          <a href="#" aria-label="YouTube"><Youtube className="w-4 h-4 hover:text-gold transition-colors" /></a>
+          <a href="#" aria-label="GitHub"><Github className="w-4 h-4 hover:text-gold transition-colors" /></a>
         </div>
       </div>
     </footer>

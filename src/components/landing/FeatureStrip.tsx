@@ -25,11 +25,11 @@ export function FeatureStrip() {
             <div className="w-11 h-11 rounded-full border border-[#F1C56D]/30 flex items-center justify-center text-[#F1C56D]">
               <Icon size={20} />
             </div>
-            <div className="text-[9px] tracking-[0.18em] uppercase text-[#F1C56D] font-semibold leading-tight">
+            <div className="text-[9px] tracking-[0.18em] uppercase text-gold font-semibold font-body leading-tight">
               {label}
-              {sublabel && <><br /><span className="text-[#F4E9D3]/50">{sublabel}</span></>}
+              {sublabel && <><br /><span className="text-parchment/50">{sublabel}</span></>}
             </div>
-            <div className="text-[11px] text-[#F4E9D3]/45 leading-snug">{text}</div>
+            <div className="text-[11px] text-parchment/45 leading-snug font-body font-normal">{text}</div>
           </div>
         ))}
       </div>

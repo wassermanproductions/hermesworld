@@ -17,9 +17,9 @@ export function Nav() {
           <WordmarkHorizontal height={18} />
         </a>
 
-        <nav className="hidden md:flex items-center gap-7 ml-14 text-[13px] text-[#F4E9D3]/70">
+        <nav className="hidden md:flex items-center gap-7 ml-14 text-[13px] font-body font-medium text-parchment/70">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-[#F1C56D] transition-colors">
+            <a key={l.href} href={l.href} className="hover:text-gold transition-colors">
               {l.label}
             </a>
           ))}
@@ -28,13 +28,13 @@ export function Nav() {
         <div className="ml-auto flex items-center gap-3">
           <a
             href="https://hermes-world.ai/play/"
-            className="hidden sm:inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.12em] font-medium px-5 py-2 rounded border border-[#F1C56D] text-[#F1C56D] hover:bg-[#F1C56D]/10 transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.12em] font-body font-semibold px-5 py-2 rounded border border-gold text-gold hover:bg-gold/10 transition-colors"
           >
             Enter the World
           </a>
           <a
             href="#preview"
-            className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.12em] font-medium px-5 py-2 rounded bg-[#F1C56D]/15 border border-[#F1C56D]/60 text-[#F1C56D] hover:bg-[#F1C56D]/25 transition-colors"
+            className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.12em] font-body font-semibold px-5 py-2 rounded bg-gold/15 border border-gold/60 text-gold hover:bg-gold/25 transition-colors"
           >
             <Sigil size={14} /> Watch Preview
           </a>

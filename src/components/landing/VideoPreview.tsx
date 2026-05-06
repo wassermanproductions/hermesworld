@@ -7,12 +7,11 @@ export function VideoPreview() {
       <div className="grid lg:grid-cols-[280px_1fr] gap-10 items-start">
         <div>
           <h2
-            className="text-[40px] md:text-[48px] leading-[1.05] text-[#F4E9D3]"
-            style={{ fontFamily: '"Cormorant Garamond", "Instrument Serif", serif' }}
+            className="font-display text-[40px] md:text-[48px] leading-[1.05] text-parchment font-light"
           >
             See HermesWorld<br />in action.
           </h2>
-          <p className="mt-4 text-[13px] text-[#F4E9D3]/50 leading-relaxed">
+          <p className="mt-4 text-[13px] text-parchment/50 leading-relaxed font-body font-normal">
             Live systems. Real agents.<br />A world that reacts.
           </p>
           <a
@@ -37,15 +36,15 @@ export function VideoPreview() {
           {/* Right panels */}
           <div className="space-y-4">
             <div className="border border-[#F1C56D]/15 rounded-xl bg-[#0F1622]/50 p-4">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-[#F1C56D] font-semibold mb-1">Dashboard View</div>
-              <div className="text-[11px] text-[#F4E9D3]/50">Strategize and manage your world.</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-gold font-semibold font-body mb-1">Dashboard View</div>
+              <div className="text-[11px] text-parchment/50 font-body font-normal">Strategize and manage your world.</div>
             </div>
             <div className="border border-[#F1C56D]/15 rounded-xl bg-[#0F1622]/50 p-4">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-8 rounded-full bg-[#F1C56D]/20 border border-[#F1C56D]/40 flex items-center justify-center text-[10px] text-[#F1C56D] font-bold">E</div>
                 <div>
-                  <div className="text-[12px] text-[#F4E9D3] font-medium">Eric</div>
-                  <div className="text-[10px] text-[#F4E9D3]/45">Level 20</div>
+                  <div className="text-[12px] text-parchment font-medium font-body">Eric</div>
+                  <div className="text-[10px] text-parchment/45 font-body">Level 20</div>
                 </div>
               </div>
               <div className="flex gap-1.5">
@@ -61,9 +60,9 @@ export function VideoPreview() {
                   </div>
                 ))}
               </div>
-              <div className="mt-2 text-[9px] text-[#F4E9D3]/40">1,240 / 2,000 XP</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-[#F1C56D] font-semibold mt-3">Agent HUD</div>
-              <div className="text-[11px] text-[#F4E9D3]/50">Full control. Real-time information.</div>
+              <div className="mt-2 text-[9px] text-parchment/40 font-body">1,240 / 2,000 XP</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-gold font-semibold font-body mt-3">Agent HUD</div>
+              <div className="text-[11px] text-parchment/50 font-body font-normal">Full control. Real-time information.</div>
             </div>
           </div>
         </div>
