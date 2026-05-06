@@ -25,8 +25,8 @@ export function FeatureStrip() {
             <div className="w-11 h-11 rounded-full border border-gold/40 flex items-center justify-center text-gold">
               <Icon size={20} />
             </div>
-            <div className="font-display text-[20px] leading-tight text-parchment">{label}</div>
-            <div className="text-[11px] tracking-[0.22em] uppercase text-parchment/55 font-sans max-w-[200px]">{text}</div>
+            <div className="text-[11px] tracking-[0.28em] uppercase text-parchment font-medium">{label}</div>
+            <div className="text-[12.5px] text-parchment/60 leading-relaxed max-w-[200px]">{text}</div>
           </div>
         ))}
       </div>
