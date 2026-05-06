@@ -1,4 +1,4 @@
-import { Sigil } from "./Sigil";
+import { Sigil, WordmarkHorizontal } from "./Sigil";
 import { Play } from "lucide-react";
 
 const links = [
