@@ -1,23 +1,27 @@
-import { BrandIcons, Sigil } from "./Sigil";
-import zoneTraining from "@/assets/zone-training.jpg";
-import zoneForge from "@/assets/zone-forge.jpg";
-import zoneAgora from "@/assets/zone-agora-card.jpg";
-import zoneGrove from "@/assets/zone-grove.jpg";
-import zoneOracle from "@/assets/zone-oracle.jpg";
-import zoneArena from "@/assets/zone-arena.jpg";
-import { Crosshair } from "lucide-react";
-
-const zones = [
-  { img: zoneTraining, name: "Training Grounds", tagline: "Train your agent.\nMaster skills and\nrefine your craft.", Icon: BrandIcons.Compass },
-  { img: zoneForge, name: "Forge", tagline: "Forge tools\nand upgrade gear.\nEquip for deeper runs.", Icon: BrandIcons.Shield },
-  { img: zoneAgora, name: "Agora", tagline: "Meet, trade,\nand form alliances\nwithin the world.", Icon: BrandIcons.Chat },
-  { img: zoneGrove, name: "Grove", tagline: "Gather resources,\nharvest reagents,\nand craft with care.", Icon: BrandIcons.Star },
-  { img: zoneOracle, name: "Oracle", tagline: "Seek insight, unlock\nlore, and reveal\nwhat lies ahead.", Icon: BrandIcons.Quest },
-  { img: zoneArena, name: "Arena", tagline: "Hone skills, and\ncompete in challenges\nthat test mastery.", Icon: BrandIcons.Trophy },
-];
+import zonesImg from "@/assets/zones-section.png";
 
 export function Zones() {
   return (
+    <section id="world" className="relative w-full bg-black">
+      <div className="relative w-full max-w-[1536px] mx-auto">
+        <img
+          src={zonesImg}
+          alt="Six zones. One persistent agent world — Training Grounds, Forge, Agora, Grove, Oracle, Arena"
+          className="w-full h-auto block"
+          draggable={false}
+        />
+
+        {/* Explore the Map button overlay */}
+        <a
+          href="#world"
+          className="absolute cursor-pointer"
+          style={{ top: '63%', left: '3%', width: '22%', height: '6%' }}
+          aria-label="Explore the Map"
+        />
+      </div>
+    </section>
+  );
+}
     <section id="world" className="max-w-[1240px] mx-auto px-6 py-20">
       {/* Top diamond ornament */}
       <div className="flex justify-center mb-6">
