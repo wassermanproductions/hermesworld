@@ -14,8 +14,8 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-xl border-b border-gold/15">
       <div className="max-w-[1400px] mx-auto px-8 h-[72px] flex items-center">
         <a href="#top" className="flex items-center gap-3">
-          <Sigil size={38} />
-          <WordmarkHorizontal height={22} />
+          <Sigil size={46} />
+          <WordmarkHorizontal height={28} />
         </a>
 
         <nav className="hidden md:flex items-center gap-9 ml-16 text-[15px] font-body font-medium text-parchment/70">
