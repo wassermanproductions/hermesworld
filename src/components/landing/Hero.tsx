@@ -14,8 +14,8 @@ export function Hero() {
           className="w-full h-full object-cover brightness-110 contrast-90"
         />
         {/* Vignettes */}
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/15 to-obsidian/72" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(8,9,14,0.65)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/45 via-obsidian/10 to-obsidian/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(8,9,14,0.55)_100%)]" />
       </div>
 
       {/* Top gold hairline under nav */}
