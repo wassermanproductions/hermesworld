@@ -1,65 +1,15 @@
-import { BrandIcons, Sigil } from "./Sigil";
-import sigilPedestal from "@/assets/sigil-pedestal.jpg";
-
-const perks = [
-  { Icon: BrandIcons.Portal, title: "Unlocks", body: "Open zones, panes, capabilities, and world systems as you progress." },
-  { Icon: BrandIcons.Shield, title: "Agent Progression", body: "Upgrade companion abilities, tools, loadouts, and memory depth." },
-  { Icon: BrandIcons.Quest, title: "Quests", body: "Convert goals into trackable quests with receipts, outcomes, and history." },
-  { Icon: BrandIcons.Star, title: "Cosmetics + Lore", body: "Customize the player, agents, banners, and uncover world lore." },
-];
+import sigilsImg from "@/assets/sigils-section.png";
 
 export function Sigils() {
   return (
-    <section id="sigils" className="max-w-[1240px] mx-auto px-6 py-20">
-      <div className="grid lg:grid-cols-[280px_1fr_1fr] gap-8 items-start">
-        {/* Left text */}
-        <div>
-          <h2
-            className="font-display text-[40px] md:text-[48px] leading-[1.05] text-parchment font-light"
-          >
-            Collect Hermes<br />Sigils as you<br />unlock the world.
-          </h2>
-          <p className="mt-5 text-[13px] text-parchment/50 leading-relaxed font-body font-normal">
-            Hermes Sigils are progression artifacts earned through quests, agent upgrades, world exploration, and system mastery.
-          </p>
-          <p className="mt-3 text-[12px] text-parchment/35 leading-relaxed italic font-display">
-            They make invisible agent progress visible.
-          </p>
-        </div>
-
-        {/* Center medallion */}
-        <div className="flex flex-col items-center justify-center">
-          <div className="relative w-[280px] h-[280px]">
-            <div className="absolute inset-0 blur-[80px] bg-[#F1C56D]/40 rounded-full scale-125" />
-            <img
-              src={sigilPedestal}
-              alt="Hermes Sigil"
-              className="relative w-full h-full object-contain drop-shadow-[0_0_60px_rgba(241,197,109,0.5)]"
-              loading="lazy"
-            />
-          </div>
-          <div className="mt-3 flex items-center gap-3">
-            <div className="flex gap-1">
-              {Array.from({ length: 7 }).map((_, i) => (
-                <Sigil key={i} size={14} />
-              ))}
-            </div>
-          </div>
-          <div className="text-[10px] text-parchment/40 tracking-[0.15em] uppercase mt-2 font-body font-medium">
-            Sigils Collected · 24 / 120
-          </div>
-        </div>
-
-        {/* Right 2x2 perks */}
-        <div className="grid grid-cols-2 gap-5">
-          {perks.map(({ Icon, title, body }) => (
-            <div key={title} className="border border-[#F1C56D]/15 rounded-lg bg-[#0F1622]/40 p-4">
-              <div className="text-[#F1C56D] mb-2.5"><Icon size={24} /></div>
-              <div className="text-[10px] uppercase tracking-[0.2em] font-semibold font-body text-gold">{title}</div>
-              <div className="text-[11px] text-parchment/50 mt-1.5 leading-relaxed font-body font-normal">{body}</div>
-            </div>
-          ))}
-        </div>
+    <section id="sigils" className="relative w-full bg-black">
+      <div className="relative w-full max-w-[1536px] mx-auto">
+        <img
+          src={sigilsImg}
+          alt="Collect Hermes Sigils as you unlock the world — Unlocks, Agent Progression, Quests, Cosmetics + Lore"
+          className="w-full h-auto block"
+          draggable={false}
+        />
       </div>
     </section>
   );
