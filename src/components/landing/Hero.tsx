@@ -35,8 +35,8 @@ export function Hero() {
           <span className="flex-1 h-px bg-gradient-to-l from-transparent to-gold/50" />
         </div>
 
-        <p className="mt-7 max-w-2xl text-parchment/75 text-[15px] md:text-[17px] leading-relaxed">
-          Step into a shared world of Hermes agents. Train, build, and quest with builders worldwide.
+        <p className="font-display mt-auto pt-20 max-w-2xl text-parchment text-[15px] md:text-[18px] tracking-[0.2em] uppercase leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
+          Step into a shared world of Hermes agents.<br className="hidden md:block" /> Train, build, and quest with builders worldwide.
         </p>
 
         {/* CTAs */}
