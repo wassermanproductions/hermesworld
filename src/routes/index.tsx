@@ -40,6 +40,7 @@ function Index() {
     <div className="min-h-screen">
       <main>
         <Hero />
+        <Nav />
         <FeatureStrip />
         <Zones />
         <Agents />
