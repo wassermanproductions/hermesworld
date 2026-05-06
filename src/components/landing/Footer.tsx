@@ -1,4 +1,4 @@
-import { Sigil } from "./Sigil";
+import { LogoStacked } from "./Sigil";
 import { Twitter, Youtube, Github, MessageCircle } from "lucide-react";
 
 const links = ["Enter World", "Watch Preview", "Hermes Workspace", "Updates", "Terms", "Privacy"];
@@ -8,12 +8,7 @@ export function Footer() {
     <footer id="updates" className="border-t border-gold-soft bg-[rgba(8,9,14,0.9)]">
       <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-[1fr_2fr_1fr] gap-10 items-start">
         <div>
-          <div className="flex items-center gap-2.5">
-            <Sigil size={26} />
-            <span className="font-display text-[20px] tracking-[0.04em] text-parchment">
-              Hermes<span className="text-gold">World</span>
-            </span>
-          </div>
+          <LogoStacked width={110} />
           <p className="text-[11px] text-parchment/45 mt-3 max-w-[240px] leading-relaxed italic">
             A persistent AI agent RPG inside Hermes Workspace.
           </p>
