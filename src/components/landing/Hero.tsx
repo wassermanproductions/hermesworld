@@ -1,150 +1,117 @@
 import { Globe, HardDrive, Zap } from "lucide-react";
-import { Sigil } from "./Sigil";
+import { Sigil, WordmarkHorizontal } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="bg-obsidian">
-      {/* Diamond ornament */}
-      <div className="flex justify-center py-3">
-        <svg width="10" height="10" viewBox="0 0 10 10" className="text-gold/50" fill="currentColor"><polygon points="5,0 10,5 5,10 0,5" /></svg>
+    <section id="top" className="bg-obsidian relative overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gold/[0.04] blur-[120px]" />
+        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gold/[0.06] blur-[80px]" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-8 pt-4 pb-10">
-        <div className="relative grid lg:grid-cols-[42%_58%] gap-0 items-start">
+      <div className="relative max-w-[1400px] mx-auto px-8 pt-10 pb-14">
+        {/* Centered hero content */}
+        <div className="flex flex-col items-center text-center">
 
-          {/* Large decorative sigil watermark bridging text and image */}
-          <div className="hidden lg:block absolute top-[40px] left-[32%] z-10 pointer-events-none">
-            <div className="relative">
-              <div className="absolute inset-0 blur-[40px] bg-gold/15 rounded-full scale-110" />
-              <Sigil size={180} className="relative opacity-50" />
-            </div>
+          {/* Huge gold sigil */}
+          <div className="relative mb-6">
+            <div className="absolute inset-0 blur-[80px] bg-gold/20 rounded-full scale-150" />
+            <Sigil size={220} className="relative drop-shadow-[0_0_80px_rgba(241,197,109,0.4)]" />
           </div>
 
-          {/* Left copy */}
-          <div className="pt-2 pr-0 relative z-20">
-            <div className="flex items-center gap-2.5 text-[11px] tracking-[0.25em] uppercase text-gold/90 mb-5 font-body font-semibold">
-              <Sigil size={16} />
-              <span>The Agent MMO</span>
-            </div>
-
-            <h1
-              className="font-display text-[44px] md:text-[58px] lg:text-[68px] leading-[1.05] tracking-[-0.015em] text-parchment font-light"
-            >
-              Step into a<br />
-              shared world of<br />
-              Hermes agents.
-            </h1>
-
-            <p className="mt-5 text-[15px] font-body font-normal text-parchment/55 leading-[1.75] max-w-[420px]">
-              Train agents, build together, and quest across a living world. Your progress is real.<br />
-              Your impact is shared.
-            </p>
-
-            <p className="mt-3 text-[15px] font-body font-medium text-gold/80">
-              Play in your browser. No downloads.
-            </p>
-
-            {/* Divider */}
-            <div className="w-full h-px bg-gold/20 mt-7 mb-5" />
-
-            <div className="flex items-center pb-2">
-              {[
-                { Icon: Globe, label: "Browser playable" },
-                { Icon: HardDrive, label: "Progress saves locally" },
-                { Icon: Zap, label: "No signup required" },
-              ].map(({ Icon, label }, i) => (
-                <div key={label} className={`flex items-center gap-3 text-[14px] font-body font-semibold text-gold ${i > 0 ? "border-l border-gold/25 ml-6 pl-6" : ""}`}>
-                  <div className="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center flex-none">
-                    <Icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
+          {/* Large wordmark */}
+          <div className="mb-8">
+            <WordmarkHorizontal height={42} />
           </div>
 
-          {/* Right — gameplay screenshot with HUD */}
-          <div className="relative rounded-xl overflow-hidden border border-gold/40 z-20">
-            <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/10] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent mx-0 px-0 pr-[28px] mb-0 mr-0 text-right" />
+          {/* Tagline label */}
+          <div className="flex items-center gap-2.5 text-[11px] tracking-[0.3em] uppercase text-gold/80 mb-4 font-body font-semibold">
+            <svg width="20" height="1" className="text-gold/40"><line x1="0" y1="0.5" x2="20" y2="0.5" stroke="currentColor" /></svg>
+            The Agent MMO
+            <svg width="20" height="1" className="text-gold/40"><line x1="0" y1="0.5" x2="20" y2="0.5" stroke="currentColor" /></svg>
+          </div>
 
-            {/* Player card top-left */}
-            <div className="absolute top-2.5 left-2.5 bg-midnight/85 backdrop-blur-sm border border-gold/20 rounded-lg px-2.5 py-2 flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-gold/25 border-2 border-gold/50 flex items-center justify-center text-[12px] text-gold font-bold overflow-hidden">
-                <img src={heroImg} alt="" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <div className="text-[12px] text-parchment font-semibold font-body">Eric</div>
-                <div className="text-[9px] text-parchment/50 font-body">Level 20 · Runner</div>
-                <div className="text-[9px] text-gold/60 font-body">The Aurelian</div>
-              </div>
-            </div>
+          {/* Heading — reduced size */}
+          <h1 className="font-display text-[32px] md:text-[40px] lg:text-[46px] leading-[1.1] tracking-[-0.01em] text-parchment font-light max-w-[700px]">
+            Step into a shared world<br />of Hermes agents.
+          </h1>
 
-            {/* Stat orbs below player card */}
-            <div className="absolute top-[65px] left-2.5 flex gap-1">
-              {[
-                { border: "border-red-500", val: "42", label: "STR" },
-                { border: "border-green-500", val: "68", label: "DEX" },
-                { border: "border-cyan-400", val: "72", label: "INT" },
-                { border: "border-purple-500", val: "33", label: "VIT" },
-              ].map(({ border, val, label }) => (
-                <div key={label} className={`w-8 h-8 rounded-full bg-obsidian/80 flex flex-col items-center justify-center border-2 ${border}`}>
-                  <span className="text-[8px] font-bold leading-none text-parchment">{val}</span>
-                  <span className="text-[5px] leading-none text-parchment/50 font-bold uppercase">{label}</span>
+          <p className="mt-4 text-[15px] font-body font-normal text-parchment/50 leading-[1.75] max-w-[520px]">
+            Train agents, build together, and quest across a living world.
+            Your progress is real. Your impact is shared.
+          </p>
+
+          <p className="mt-2 text-[14px] font-body font-medium text-gold/70">
+            Play in your browser. No downloads.
+          </p>
+
+          {/* Feature badges */}
+          <div className="flex items-center mt-8 mb-10">
+            {[
+              { Icon: Globe, label: "Browser playable" },
+              { Icon: HardDrive, label: "Progress saves locally" },
+              { Icon: Zap, label: "No signup required" },
+            ].map(({ Icon, label }, i) => (
+              <div key={label} className={`flex items-center gap-2.5 text-[12px] font-body font-semibold text-gold/80 ${i > 0 ? "border-l border-gold/20 ml-5 pl-5" : ""}`}>
+                <div className="w-9 h-9 rounded-full border border-gold/40 flex items-center justify-center flex-none">
+                  <Icon className="w-4 h-4 text-gold" />
                 </div>
-              ))}
-            </div>
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
 
-            {/* Objective panel top-center */}
-            <div className="absolute top-2.5 left-[180px] right-[125px] bg-midnight/80 backdrop-blur-sm border border-gold/15 rounded-md px-2.5 py-1.5">
-              <div className="flex items-center gap-1.5">
-                <div className="w-4 h-4 rounded-full bg-gold/20 flex items-center justify-center text-gold text-[8px] flex-none">◎</div>
+          {/* Gameplay screenshot — smaller, centered, with subtle frame */}
+          <div className="relative w-full max-w-[780px] mx-auto">
+            <div className="absolute -inset-4 bg-gradient-to-b from-gold/[0.06] to-transparent rounded-2xl blur-sm pointer-events-none" />
+            <div className="relative rounded-xl overflow-hidden border border-gold/30 shadow-[0_20px_80px_-20px_rgba(241,197,109,0.2)]">
+              <img src={heroImg} alt="HermesWorld gameplay" className="w-full aspect-[16/9] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/50 via-transparent to-obsidian/20" />
+
+              {/* Minimal HUD overlay */}
+              <div className="absolute top-3 left-3 bg-midnight/80 backdrop-blur-sm border border-gold/20 rounded-lg px-2.5 py-1.5 flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-gold/25 border border-gold/50 flex items-center justify-center text-[10px] text-gold font-bold">E</div>
                 <div>
-                  <div className="text-[7px] uppercase tracking-widest text-parchment/40 font-body">Objective</div>
-                  <div className="text-[9px] text-parchment/80 font-body font-medium">
-                    <span className="text-gold font-semibold">Move and Speak</span>
-                    {" "} Talk to Athena in Acanthus Commons
+                  <div className="text-[10px] text-parchment font-semibold font-body">Eric</div>
+                  <div className="text-[8px] text-parchment/45 font-body">Level 20 · Runner</div>
+                </div>
+              </div>
+
+              {/* Stat orbs */}
+              <div className="absolute top-3 left-[120px] flex gap-1">
+                {[
+                  { border: "border-red-500", val: "42", label: "STR" },
+                  { border: "border-green-500", val: "68", label: "DEX" },
+                  { border: "border-cyan-400", val: "72", label: "INT" },
+                  { border: "border-purple-500", val: "33", label: "VIT" },
+                ].map(({ border, val, label }) => (
+                  <div key={label} className={`w-7 h-7 rounded-full bg-obsidian/80 flex flex-col items-center justify-center border-2 ${border}`}>
+                    <span className="text-[7px] font-bold leading-none text-parchment">{val}</span>
+                    <span className="text-[4px] leading-none text-parchment/40 font-bold uppercase">{label}</span>
                   </div>
+                ))}
+              </div>
+
+              {/* Minimap top-right */}
+              <div className="absolute top-3 right-3 bg-midnight/80 backdrop-blur-sm border border-gold/20 rounded-lg overflow-hidden w-[85px]">
+                <div className="text-[6px] uppercase tracking-[0.12em] text-gold font-bold font-body px-1.5 py-1 border-b border-gold/10">
+                  Asora Commons
+                </div>
+                <div className="h-[45px] bg-verdigris/10" />
+              </div>
+
+              {/* Bottom gradient bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-obsidian/80 to-transparent flex items-end justify-center pb-2">
+                <div className="flex gap-1">
+                  {["≡", "⚔", "🛡", "💧", "🎒", "👤"].map((icon, i) => (
+                    <div key={i} className={`w-6 h-6 rounded flex items-center justify-center text-[9px] border ${i === 1 ? "bg-gold/20 border-gold/35" : "bg-midnight/60 border-gold/10"}`}>
+                      {icon}
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            {/* Minimap top-right */}
-            <div className="absolute top-2.5 right-2.5 bg-midnight/85 backdrop-blur-sm border border-gold/20 rounded-lg overflow-hidden w-[100px]">
-              <div className="text-[6px] uppercase tracking-[0.15em] text-gold font-bold font-body px-2 py-1 border-b border-gold/10 flex items-center justify-between">
-                Asora Commons <span className="text-parchment/40">+</span>
-              </div>
-              <div className="h-[60px] bg-verdigris/10 relative">
-                <div className="absolute inset-0 opacity-30" style={{
-                  backgroundImage: "radial-gradient(circle at 60% 40%, rgba(46,106,99,0.4), transparent 60%), radial-gradient(circle at 30% 70%, rgba(241,197,109,0.15), transparent 50%)"
-                }} />
-                <div className="absolute bottom-1 right-1.5 text-[6px] text-parchment/40 font-mono">12 DPM</div>
-              </div>
-            </div>
-
-            {/* NPC labels on the scene */}
-            <div className="absolute top-[48%] left-[35%] text-[7px] text-parchment/60 font-body font-medium bg-obsidian/40 px-1 py-0.5 rounded">
-              Raffan Moss
-            </div>
-            <div className="absolute top-[38%] right-[6%] text-[7px] text-parchment/60 font-body font-medium bg-obsidian/40 px-1 py-0.5 rounded">
-              Lirae Arlen
-            </div>
-
-            {/* Surfer panel */}
-            <div className="absolute bottom-[90px] right-[8%] bg-midnight/75 backdrop-blur-sm border border-gold/12 rounded-md px-2 py-1.5 text-[7px] text-parchment/55 font-body">
-              <div className="text-parchment/70 font-medium text-[7px]">Surfer of the Sigil</div>
-              <div className="text-gold/70 font-bold text-[8px]">POUL</div>
-              <div className="mt-0.5 text-[6px] text-parchment/35">70m to Dubaor's</div>
-            </div>
-
-            {/* Action bar bottom-right */}
-            <div className="absolute bottom-2.5 right-2.5 flex gap-0.5">
-              {["≡", "⚔", "🛡", "💧", "🎒", "👤"].map((icon, i) => (
-                <div key={i} className={`w-7 h-7 rounded flex items-center justify-center text-[11px] border ${i === 1 ? "bg-gold/20 border-gold/40" : "bg-midnight/70 border-gold/12"}`}>
-                  {icon}
-                </div>
-              ))}
             </div>
           </div>
         </div>
