@@ -11,7 +11,7 @@ export function Hero() {
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gold/[0.06] blur-[80px]" />
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-8 pt-4 pb-14">
+      <div className="relative max-w-[1400px] mx-auto px-8 pt-4 pb-14 bg-black">
         {/* Centered hero content */}
         <div className="flex flex-col items-center text-center">
 
