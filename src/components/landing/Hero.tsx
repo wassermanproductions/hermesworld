@@ -18,8 +18,8 @@ export function Hero() {
           {/* Huge gold sigil */}
 
           {/* Large wordmark */}
-          <div className="mb-8">
-            <WordmarkHorizontal height={42} />
+          <div className="mb-10">
+            <WordmarkHorizontal height={120} />
           </div>
 
           {/* Tagline label */}
