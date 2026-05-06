@@ -138,27 +138,6 @@ export function Hero() {
               <div className="mt-0.5 text-[6px] text-parchment/35">70m to Dubaor's</div>
             </div>
 
-            {/* Chat log bottom-left */}
-            <div className="absolute bottom-[40px] left-2.5 w-[52%] bg-midnight/90 backdrop-blur-sm border border-gold/15 rounded-lg overflow-hidden">
-              <div className="flex items-center justify-between px-2.5 py-1 border-b border-gold/10">
-                <div className="text-[8px] font-body font-semibold text-parchment/60 uppercase tracking-wider">Chat · 4 · Online</div>
-                <X className="w-2.5 h-2.5 text-parchment/30" />
-              </div>
-              <div className="px-2.5 py-1.5 text-[8px] font-mono text-parchment/50 space-y-px leading-[1.5]">
-                <div><span className="text-gold/70">Ireathorne:</span> Welcome to HermesWorld.</div>
-                <div><span className="text-verdigris">Vera Ephraemer:</span> great to quest with.</div>
-                <div><span className="text-verdigris">Vera Ephraemer:</span> The Aureian is open, that</div>
-                <div><span className="text-parchment/65">Eric:</span> yoo</div>
-                <div><span className="text-gold/50">ClanHoodz</span> on Dubaor's</div>
-                <div><span className="text-bronze">WanderTyger:</span> see y'all in the Grove</div>
-                <div><span className="text-gold/50">DireOakDough:</span> on Dubaor's</div>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 pb-2 pt-1">
-                <input className="flex-1 bg-obsidian/60 border border-gold/15 rounded px-2 py-1 text-[8px] text-parchment/60 outline-none font-body" placeholder="Type a message..." readOnly />
-                <span className="text-[8px] text-obsidian bg-gold/80 px-2.5 py-1 rounded font-bold font-body uppercase tracking-wider">Send</span>
-              </div>
-            </div>
-
             {/* Action bar bottom-right */}
             <div className="absolute bottom-2.5 right-2.5 flex gap-0.5">
               {["≡", "⚔", "🛡", "💧", "🎒", "👤"].map((icon, i) => (
