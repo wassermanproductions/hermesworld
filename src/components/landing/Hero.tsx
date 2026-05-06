@@ -1,7 +1,6 @@
 import { Play } from "lucide-react";
 import { Sigil } from "./Sigil";
 import heroImg from "@/assets/hero-village.jpg";
-import sigilPedestal from "@/assets/sigil-pedestal.jpg";
 import wordmarkImg from "@/assets/hermesworld-wordmark.png";
 
 export function Hero() {
