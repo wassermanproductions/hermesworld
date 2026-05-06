@@ -110,14 +110,16 @@ export function Sigil({ className, size = 64 }: { className?: string; size?: num
 
 /** Horizontal wordmark — used in nav */
 export function WordmarkHorizontal({ className, height = 28 }: { className?: string; height?: number }) {
-  // Aspect ~ 6.2 : 1
-  const width = height * 6.2;
+  // Aspect ~ 8.5 : 1 for wider spread
+  const width = height * 8.5;
   return (
     <svg
       width={width}
       height={height}
       viewBox="0 0 620 100"
       className={className}
+      preserveAspectRatio="xMidYMid meet"
+      style={{ width: '100%', maxWidth: width, height: 'auto' }}
       aria-label="HermesWorld"
     >
       <defs>
