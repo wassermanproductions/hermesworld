@@ -129,7 +129,7 @@ export function WordmarkHorizontal({ className, height = 28 }: { className?: str
       <text
         x="0" y="72"
         fill="url(#wm-gold)"
-        fontFamily='"Cormorant Garamond", "Instrument Serif", serif'
+        fontFamily='"Canela", "Instrument Serif", serif'
         fontWeight="500"
         fontSize="74"
         letterSpacing="2"
@@ -153,7 +153,7 @@ export function LogoStacked({ className, width = 140 }: { className?: string; wi
     <div className={className} style={{ width, height }}>
       <div className="flex flex-col items-center gap-2">
         <Sigil size={width * 0.55} />
-        <div className="text-center leading-[0.95]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+      <div className="text-center leading-[0.95]" style={{ fontFamily: '"Canela", "Instrument Serif", serif' }}>
           <div className="text-gold tracking-[0.18em] font-medium" style={{ fontSize: width * 0.16 }}>HERMES</div>
           <div className="text-gold tracking-[0.18em] font-medium" style={{ fontSize: width * 0.16 }}>WORLD</div>
         </div>
