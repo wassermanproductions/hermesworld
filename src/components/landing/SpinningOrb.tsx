@@ -90,15 +90,47 @@ export function SpinningOrb() {
 
       ctx.clearRect(0, 0, w, h);
 
-      // --- Orbit rings (faint) ---
-      const ringRadii = [0.22, 0.30, 0.38, 0.46];
-      ctx.strokeStyle = "rgba(241,197,109,0.08)";
-      ctx.lineWidth = 0.5;
-      for (const r of ringRadii) {
+      // --- Planetary orbit lines ---
+      const ringRadii = [0.18, 0.24, 0.31, 0.39, 0.47];
+      const ringRotations = [0, 0.22, -0.18, 0.42, -0.36];
+      ctx.lineWidth = 0.7;
+      for (let i = 0; i < ringRadii.length; i++) {
+        const r = ringRadii[i];
+        ctx.strokeStyle = i === ringRadii.length - 1
+          ? "rgba(241,197,109,0.12)"
+          : "rgba(120,150,255,0.06)";
         ctx.beginPath();
-        ctx.ellipse(cx, cy, r * half * 2, r * half * 2 * 0.7, 0, 0, Math.PI * 2);
+        ctx.ellipse(
+          cx,
+          cy,
+          r * half * 2,
+          r * half * 2 * 0.72,
+          ringRotations[i],
+          0,
+          Math.PI * 2,
+        );
         ctx.stroke();
       }
+
+      // Meridian / planetary guide lines
+      ctx.strokeStyle = "rgba(241,197,109,0.07)";
+      ctx.lineWidth = 0.6;
+      for (const rot of [-0.9, -0.45, 0.45, 0.9]) {
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, half * 0.34, half * 0.52, rot, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Subtle chord lines crossing the sphere
+      ctx.strokeStyle = "rgba(241,197,109,0.08)";
+      ctx.beginPath();
+      ctx.moveTo(cx - half * 0.55, cy + half * 0.18);
+      ctx.lineTo(cx + half * 0.52, cy - half * 0.2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(cx - half * 0.48, cy - half * 0.08);
+      ctx.lineTo(cx + half * 0.5, cy + half * 0.28);
+      ctx.stroke();
 
       // --- Constellation lines (connect nearby particles) ---
       const particles = particlesRef.current;
