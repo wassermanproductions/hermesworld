@@ -11,7 +11,7 @@ const links = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-xl border-b border-gold/15">
+    <header className="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-xl">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8 h-[72px] flex items-center">
         <a href="#top" className="flex items-center gap-3">
           <Sigil size={46} />
@@ -41,6 +41,7 @@ export function Nav() {
           </a>
         </div>
       </div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
     </header>
   );
 }
