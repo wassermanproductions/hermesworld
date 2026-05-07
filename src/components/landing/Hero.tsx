@@ -9,7 +9,7 @@ export function Hero() {
         <img
           src={heroLanding}
           alt="HermesWorld — Step into a shared world of Hermes agents"
-          className="w-full h-auto block"
+          className="w-full h-auto block object-scale-down"
           draggable={false}
         />
 

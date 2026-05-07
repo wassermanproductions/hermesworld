@@ -7,7 +7,7 @@ export function FinalCTA() {
         <img
           src={footerImg}
           alt="Build with agents in a world, not a chat box — HermesWorld"
-          className="w-full h-auto block"
+          className="w-full h-auto block object-scale-down"
           draggable={false}
         />
 

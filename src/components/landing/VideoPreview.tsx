@@ -13,7 +13,7 @@ export function VideoPreview() {
           <img
             src={previewImg}
             alt="See HermesWorld in action — Live systems, real agents, a world that reacts"
-            className="w-full h-auto block"
+            className="w-full h-auto block object-scale-down"
             draggable={false}
           />
 

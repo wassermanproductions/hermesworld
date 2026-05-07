@@ -7,7 +7,7 @@ export function Agents() {
         <img
           src={agentsImg}
           alt="Your agents live in the world with you — Agent Companions, Autonomous Actions, Offline Progression"
-          className="w-full h-auto block"
+          className="w-full h-auto block object-scale-down"
           draggable={false}
         />
 

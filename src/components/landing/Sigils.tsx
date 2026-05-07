@@ -7,7 +7,7 @@ export function Sigils() {
         <img
           src={sigilsImg}
           alt="Collect Hermes Sigils as you unlock the world — Unlocks, Agent Progression, Quests, Cosmetics + Lore"
-          className="w-full h-auto block"
+          className="w-full h-auto block object-scale-down"
           draggable={false}
         />
       </div>
