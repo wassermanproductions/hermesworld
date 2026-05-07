@@ -114,6 +114,12 @@
     letter-spacing: -0.015em;
     color: var(--parchment);
   }
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+  main > section + section {
+    margin-top: -4vw;
+  }
 }
 
 @layer utilities {
