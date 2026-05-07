@@ -1,4 +1,5 @@
 import heroLanding from "@/assets/hero-landing.png";
+import heroOrb from "@/assets/hero-orb.mp4";
 
 export function Hero() {
   return (
@@ -11,6 +12,22 @@ export function Hero() {
           className="w-full h-auto block"
           draggable={false}
         />
+
+        {/* Spinning orb video overlay — covers the gameplay screenshot area */}
+        <div
+          className="absolute overflow-hidden"
+          style={{ top: '12%', left: '44%', width: '55%', height: '83%' }}
+        >
+          <video
+            src={heroOrb}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            style={{ borderRadius: '12px' }}
+          />
+        </div>
 
         {/* Invisible clickable overlays positioned over the image buttons */}
         {/* Nav links — positioned over the nav text in the image */}
