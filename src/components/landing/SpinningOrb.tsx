@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 interface Particle {
   angle: number;
@@ -51,6 +51,7 @@ export function SpinningOrb() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>(createParticles(40));
   const animRef = useRef<number>(0);
+  const sizeRef = useRef({ w: 0, h: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -62,18 +63,28 @@ export function SpinningOrb() {
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const parent = canvas.parentElement;
+      if (!parent) return;
+      const w = parent.clientWidth;
+      const h = parent.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.scale(dpr, dpr);
+      sizeRef.current = { w, h };
     };
     resize();
     window.addEventListener("resize", resize);
 
     const draw = () => {
       if (!running) return;
-      const w = canvas.getBoundingClientRect().width;
-      const h = canvas.getBoundingClientRect().height;
+      const { w, h } = sizeRef.current;
+      if (w === 0 || h === 0) {
+        resize();
+        animRef.current = requestAnimationFrame(draw);
+        return;
+      }
       const cx = w / 2;
       const cy = h / 2;
       const half = Math.min(cx, cy);
