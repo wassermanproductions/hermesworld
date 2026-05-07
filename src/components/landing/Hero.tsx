@@ -1,4 +1,5 @@
 import heroLanding from "@/assets/hero-landing.png";
+import hermesLogo from "@/assets/hermes-logo.jpg";
 import { SpinningOrb } from "./SpinningOrb";
 
 export function Hero() {
@@ -19,6 +20,14 @@ export function Hero() {
           style={{ top: '12%', left: '44%', width: '56%', height: '88%' }}
         >
           <SpinningOrb />
+          {/* Hermes logo overlaid on top portion of orb */}
+          <img
+            src={hermesLogo}
+            alt="Hermes World"
+            className="absolute left-1/2 -translate-x-1/2 w-[70%] h-auto pointer-events-none"
+            style={{ top: '5%', mixBlendMode: 'lighten' }}
+            draggable={false}
+          />
         </div>
 
         {/* Invisible clickable overlays positioned over the image buttons */}
