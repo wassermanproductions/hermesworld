@@ -3,7 +3,7 @@ import { SpinningOrb } from "./SpinningOrb";
 
 export function Hero() {
   return (
-    <section id="top" className="relative w-full bg-black" style={{ maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)" }}>
+    <section id="top" className="relative w-full bg-black">
       {/* The hero image as background */}
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
