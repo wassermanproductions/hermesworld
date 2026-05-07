@@ -1,5 +1,5 @@
 import heroLanding from "@/assets/hero-landing.png";
-import heroOrb from "@/assets/hero-orb.mp4";
+import { SpinningOrb } from "./SpinningOrb";
 
 export function Hero() {
   return (
@@ -18,15 +18,7 @@ export function Hero() {
           className="absolute overflow-hidden"
           style={{ top: '13%', left: '45%', width: '53%', height: '80%' }}
         >
-          <video
-            src={heroOrb}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            style={{ borderRadius: '16px' }}
-          />
+          <SpinningOrb />
         </div>
 
         {/* Invisible clickable overlays positioned over the image buttons */}
