@@ -7,7 +7,7 @@ export function Zones() {
         <img
           src={zonesImg}
           alt="Six zones. One persistent agent world — Training Grounds, Forge, Agora, Grove, Oracle, Arena"
-          className="w-full h-auto block"
+          className="w-full h-auto block object-scale-down"
           draggable={false}
         />
 
