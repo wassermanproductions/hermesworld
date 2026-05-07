@@ -20,15 +20,16 @@ export function Hero() {
           style={{ top: '12%', left: '44%', width: '56%', height: '88%' }}
         >
           <SpinningOrb />
-          {/* Hermes logo overlaid on top portion of orb */}
-          <img
-            src={hermesLogo}
-            alt="Hermes World"
-            className="absolute w-[95%] h-auto pointer-events-none"
-            style={{ mixBlendMode: 'lighten', top: '5%', left: '-10%' }}
-            draggable={false}
-          />
         </div>
+
+        {/* Hermes logo overlaid on the orb area — outside overflow container so it's not clipped */}
+        <img
+          src={hermesLogo}
+          alt="Hermes World"
+          className="absolute pointer-events-none z-10"
+          style={{ mixBlendMode: 'lighten', top: '12%', left: '32%', width: '68%', height: 'auto' }}
+          draggable={false}
+        />
 
         {/* Invisible clickable overlays positioned over the image buttons */}
         {/* Nav links — positioned over the nav text in the image */}
