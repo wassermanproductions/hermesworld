@@ -16,7 +16,7 @@ export function Hero() {
         {/* Spinning orb video overlay — covers the gameplay screenshot area */}
         <div
           className="absolute overflow-hidden"
-          style={{ top: '12%', left: '44%', width: '55%', height: '83%' }}
+          style={{ top: '13%', left: '45%', width: '53%', height: '80%' }}
         >
           <video
             src={heroOrb}
@@ -25,7 +25,7 @@ export function Hero() {
             muted
             playsInline
             className="w-full h-full object-cover"
-            style={{ borderRadius: '12px' }}
+            style={{ borderRadius: '16px' }}
           />
         </div>
 
