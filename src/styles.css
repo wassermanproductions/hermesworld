@@ -118,7 +118,7 @@
     scroll-margin-top: 80px;
   }
   main > section + section {
-    margin-top: -4vw;
+    margin-top: -6vw;
   }
 }
 
