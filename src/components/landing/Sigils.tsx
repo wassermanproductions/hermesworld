@@ -2,7 +2,7 @@ import sigilsImg from "@/assets/sigils-section.png";
 
 export function Sigils() {
   return (
-    <section id="sigils" className="relative w-full bg-[#0a0f1a]">
+    <section id="sigils" className="relative w-full bg-black">
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
           src={sigilsImg}
