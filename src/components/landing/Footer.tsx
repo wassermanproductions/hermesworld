@@ -10,7 +10,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer id="updates" className="border-t border-[#F1C56D]/10 bg-[#080910]">
+    <footer id="updates" className="border-t border-[#F1C56D]/10 bg-black">
       <div className="max-w-[1240px] mx-auto px-6 py-12 grid md:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] gap-8 items-start">
         <div>
           <div className="flex items-center gap-2.5 mb-3">
