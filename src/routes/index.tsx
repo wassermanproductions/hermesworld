@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
 import { FeatureStrip } from "@/components/landing/FeatureStrip";
 import { Zones } from "@/components/landing/Zones";
@@ -39,7 +38,6 @@ function Index() {
     <div className="min-h-screen bg-black">
       <main>
         <Hero />
-        <Nav />
         <FeatureStrip />
         <Zones />
         <Agents />
