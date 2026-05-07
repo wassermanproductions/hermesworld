@@ -2,7 +2,7 @@ import agentsImg from "@/assets/agents-section.png";
 
 export function Agents() {
   return (
-    <section id="agents" className="relative w-full bg-[#0a0f1a]">
+    <section id="agents" className="relative w-full bg-black">
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
           src={agentsImg}

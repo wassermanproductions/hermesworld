@@ -3,7 +3,7 @@ import { SpinningOrb } from "./SpinningOrb";
 
 export function Hero() {
   return (
-    <section id="top" className="relative w-full bg-[#0a0f1a]">
+    <section id="top" className="relative w-full bg-black">
       {/* The hero image as background */}
       <div className="relative w-full max-w-[1536px] mx-auto">
         <img
@@ -15,7 +15,7 @@ export function Hero() {
 
         {/* Spinning orb video overlay — covers the gameplay screenshot area */}
         <div
-          className="absolute overflow-hidden bg-[#0a0f1a]"
+          className="absolute overflow-hidden bg-black"
           style={{ top: '12%', left: '44%', width: '56%', height: '88%' }}
         >
           <SpinningOrb />
