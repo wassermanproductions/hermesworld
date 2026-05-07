@@ -31,16 +31,16 @@ function createParticles(count: number): Particle[] {
   const particles: Particle[] = [];
   for (let i = 0; i < count; i++) {
     const pal = PALETTE[i % PALETTE.length];
-    const radiusBand = 0.15 + Math.random() * 0.32; // 15-47% of canvas half
+    const radiusBand = 0.18 + Math.random() * 0.28; // 18-46% of canvas half
     particles.push({
       angle: Math.random() * Math.PI * 2,
       radius: radiusBand,
-      speed: (0.002 + Math.random() * 0.006) * (Math.random() > 0.5 ? 1 : -1),
-      size: 2 + Math.random() * 4,
+      speed: (0.003 + Math.random() * 0.008) * (Math.random() > 0.5 ? 1 : -1),
+      size: 2.5 + Math.random() * 4.5,
       color: pal.color,
       glowColor: pal.glow,
-      glowSize: 8 + Math.random() * 16,
-      orbitTilt: 0.5 + Math.random() * 0.5, // y squash 0.5–1.0
+      glowSize: 12 + Math.random() * 20,
+      orbitTilt: 0.55 + Math.random() * 0.45, // y squash 0.55–1.0
       phase: Math.random() * Math.PI * 2,
     });
   }
@@ -128,10 +128,10 @@ export function SpinningOrb() {
       }
 
       // --- Center glow ---
-      const centerGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, half * 0.55);
-      centerGrad.addColorStop(0, "rgba(241,197,109,0.18)");
-      centerGrad.addColorStop(0.3, "rgba(241,197,109,0.08)");
-      centerGrad.addColorStop(0.6, "rgba(241,197,109,0.02)");
+      const centerGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, half * 0.65);
+      centerGrad.addColorStop(0, "rgba(241,197,109,0.25)");
+      centerGrad.addColorStop(0.2, "rgba(241,197,109,0.12)");
+      centerGrad.addColorStop(0.5, "rgba(241,197,109,0.04)");
       centerGrad.addColorStop(1, "transparent");
       ctx.fillStyle = centerGrad;
       ctx.fillRect(0, 0, w, h);
