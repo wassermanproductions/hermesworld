@@ -63,15 +63,17 @@ export function SpinningOrb() {
     let h = 0;
 
     const resize = () => {
-      const parent = canvas.parentElement;
-      if (!parent) return;
-      w = parent.clientWidth;
-      h = parent.clientHeight;
-      // Use 1x resolution for simplicity & performance
-      canvas.width = w;
-      canvas.height = h;
+      const rect = canvas.getBoundingClientRect();
+      w = Math.round(rect.width);
+      h = Math.round(rect.height);
+      if (w > 0 && h > 0) {
+        canvas.width = w;
+        canvas.height = h;
+      }
     };
-    resize();
+
+    // Delay initial resize to ensure layout is computed
+    const resizeTimer = setTimeout(resize, 100);
     window.addEventListener("resize", resize);
 
     const draw = () => {
@@ -167,6 +169,7 @@ export function SpinningOrb() {
     return () => {
       running = false;
       cancelAnimationFrame(animRef.current);
+      clearTimeout(resizeTimer);
       window.removeEventListener("resize", resize);
     };
   }, []);
