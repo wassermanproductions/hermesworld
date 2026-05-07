@@ -90,47 +90,97 @@ export function SpinningOrb() {
 
       ctx.clearRect(0, 0, w, h);
 
-      // --- Planetary orbit lines ---
-      const ringRadii = [0.18, 0.24, 0.31, 0.39, 0.47];
-      const ringRotations = [0, 0.22, -0.18, 0.42, -0.36];
-      ctx.lineWidth = 0.7;
-      for (let i = 0; i < ringRadii.length; i++) {
-        const r = ringRadii[i];
-        ctx.strokeStyle = i === ringRadii.length - 1
-          ? "rgba(241,197,109,0.12)"
-          : "rgba(120,150,255,0.06)";
+      // --- Outer circular rings (prominent) ---
+      const outerRings = [0.92, 0.85, 0.78, 0.72];
+      for (let i = 0; i < outerRings.length; i++) {
+        const r = outerRings[i] * half;
+        const alpha = i === 0 ? 0.5 : i === 1 ? 0.35 : 0.2;
+        ctx.strokeStyle = `rgba(241,197,109,${alpha})`;
+        ctx.lineWidth = i === 0 ? 1.8 : i === 1 ? 1.2 : 0.8;
         ctx.beginPath();
-        ctx.ellipse(
-          cx,
-          cy,
-          r * half * 2,
-          r * half * 2 * 0.72,
-          ringRotations[i],
-          0,
-          Math.PI * 2,
-        );
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
         ctx.stroke();
       }
 
-      // Meridian / planetary guide lines
-      ctx.strokeStyle = "rgba(241,197,109,0.07)";
-      ctx.lineWidth = 0.6;
-      for (const rot of [-0.9, -0.45, 0.45, 0.9]) {
+      // --- Tick marks on outermost ring ---
+      const outerR = outerRings[0] * half;
+      ctx.strokeStyle = "rgba(241,197,109,0.4)";
+      ctx.lineWidth = 1;
+      for (let i = 0; i < 72; i++) {
+        const a = (i / 72) * Math.PI * 2;
+        const tickLen = i % 9 === 0 ? 8 : 3;
         ctx.beginPath();
-        ctx.ellipse(cx, cy, half * 0.34, half * 0.52, rot, 0, Math.PI * 2);
+        ctx.moveTo(cx + Math.cos(a) * outerR, cy + Math.sin(a) * outerR);
+        ctx.lineTo(cx + Math.cos(a) * (outerR - tickLen), cy + Math.sin(a) * (outerR - tickLen));
         ctx.stroke();
       }
 
-      // Subtle chord lines crossing the sphere
-      ctx.strokeStyle = "rgba(241,197,109,0.08)";
+      // --- Planetary tilted orbit ellipses (prominent) ---
+      const orbitConfigs = [
+        { rx: 0.65, ry: 0.25, rot: -0.4, alpha: 0.4, lw: 1.5 },
+        { rx: 0.58, ry: 0.35, rot: 0.3, alpha: 0.35, lw: 1.3 },
+        { rx: 0.50, ry: 0.20, rot: -0.7, alpha: 0.3, lw: 1.2 },
+        { rx: 0.70, ry: 0.30, rot: 0.6, alpha: 0.25, lw: 1.0 },
+        { rx: 0.45, ry: 0.40, rot: -0.15, alpha: 0.3, lw: 1.1 },
+        { rx: 0.60, ry: 0.18, rot: 0.9, alpha: 0.22, lw: 0.9 },
+      ];
+      for (const o of orbitConfigs) {
+        ctx.strokeStyle = `rgba(241,197,109,${o.alpha})`;
+        ctx.lineWidth = o.lw;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, o.rx * half, o.ry * half, o.rot, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // --- Meridian / longitude arcs ---
+      const meridians = [-1.2, -0.8, -0.4, 0, 0.4, 0.8, 1.2];
+      for (const rot of meridians) {
+        ctx.strokeStyle = "rgba(241,197,109,0.2)";
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, half * 0.28, half * 0.55, rot, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // --- Cross / axis lines through center ---
+      ctx.strokeStyle = "rgba(241,197,109,0.25)";
+      ctx.lineWidth = 0.8;
+      // Vertical
       ctx.beginPath();
-      ctx.moveTo(cx - half * 0.55, cy + half * 0.18);
-      ctx.lineTo(cx + half * 0.52, cy - half * 0.2);
+      ctx.moveTo(cx, cy - half * 0.7);
+      ctx.lineTo(cx, cy + half * 0.7);
+      ctx.stroke();
+      // Horizontal
+      ctx.beginPath();
+      ctx.moveTo(cx - half * 0.7, cy);
+      ctx.lineTo(cx + half * 0.7, cy);
+      ctx.stroke();
+      // Diagonals
+      ctx.strokeStyle = "rgba(241,197,109,0.15)";
+      ctx.beginPath();
+      ctx.moveTo(cx - half * 0.5, cy - half * 0.5);
+      ctx.lineTo(cx + half * 0.5, cy + half * 0.5);
       ctx.stroke();
       ctx.beginPath();
-      ctx.moveTo(cx - half * 0.48, cy - half * 0.08);
-      ctx.lineTo(cx + half * 0.5, cy + half * 0.28);
+      ctx.moveTo(cx + half * 0.5, cy - half * 0.5);
+      ctx.lineTo(cx - half * 0.5, cy + half * 0.5);
       ctx.stroke();
+
+      // --- Small diamond markers at cardinal points ---
+      const diamondSize = 5;
+      ctx.fillStyle = "rgba(241,197,109,0.6)";
+      for (const a of [0, Math.PI / 2, Math.PI, Math.PI * 1.5]) {
+        const dr = outerRings[1] * half;
+        const dx = cx + Math.cos(a) * dr;
+        const dy = cy + Math.sin(a) * dr;
+        ctx.beginPath();
+        ctx.moveTo(dx, dy - diamondSize);
+        ctx.lineTo(dx + diamondSize * 0.6, dy);
+        ctx.lineTo(dx, dy + diamondSize);
+        ctx.lineTo(dx - diamondSize * 0.6, dy);
+        ctx.closePath();
+        ctx.fill();
+      }
 
       // --- Constellation lines (connect nearby particles) ---
       const particles = particlesRef.current;
