@@ -38,13 +38,27 @@ function Index() {
     <div className="min-h-screen bg-black">
       <main>
         <Hero />
+        <SectionBlend />
         <FeatureStrip />
+        <SectionBlend />
         <Zones />
+        <SectionBlend />
         <Agents />
+        <SectionBlend />
         <VideoPreview />
+        <SectionBlend />
         <Sigils />
+        <SectionBlend />
         <FinalCTA />
       </main>
     </div>
+  );
+}
+
+function SectionBlend() {
+  return (
+    <div className="relative z-10 -mt-24 -mb-24 h-48 pointer-events-none" style={{
+      background: "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 35%, #000000 50%, rgba(0,0,0,0.95) 65%, transparent 100%)",
+    }} />
   );
 }
