@@ -63,7 +63,7 @@
   --parchment: #F4E9D3;
   --verdigris: #2E6A63;
   --midnight: #000000;
-  --slate-deep: #1B2433;
+  --slate-deep: #000000;
   --stone: #8A8F98;
   --obsidian: #000000;
 
@@ -75,21 +75,21 @@
   --popover-foreground: #ECE3CC;
   --primary: #F1C46D;
   --primary-foreground: #1A1306;
-  --secondary: #182433;
+  --secondary: #000000;
   --secondary-foreground: #ECE3CC;
-  --muted: #131B27;
+  --muted: #000000;
   --muted-foreground: #8B98A8;
-  --accent: #1A2535;
+  --accent: #000000;
   --accent-foreground: #F4E9D1;
   --destructive: #C44A3F;
   --destructive-foreground: #ECE3CC;
   --border: rgba(241, 196, 109, 0.14);
-  --input: #182433;
+  --input: #0a0a0a;
   --ring: #F1C46D;
 
   --gradient-gold: linear-gradient(135deg, #F6D98A 0%, #E8B85C 45%, #B68A4A 100%);
   --gradient-gold-soft: linear-gradient(180deg, rgba(241,196,109,0.18), rgba(241,196,109,0.02));
-  --gradient-world: linear-gradient(180deg, #0F1622 0%, #08090E 100%);
+  --gradient-world: linear-gradient(180deg, #000000 0%, #000000 100%);
   --shadow-gold: 0 14px 50px -14px rgba(241, 196, 109, 0.45), 0 0 0 1px rgba(241,196,109,0.25) inset;
   --shadow-card: 0 30px 60px -30px rgba(0,0,0,0.85);
   --shadow-inset-gold: inset 0 1px 0 rgba(246, 217, 138, 0.25);
