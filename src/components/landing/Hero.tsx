@@ -15,7 +15,7 @@ export function Hero() {
 
         {/* Spinning orb video overlay — covers the gameplay screenshot area */}
         <div
-          className="absolute overflow-hidden"
+          className="absolute overflow-hidden bg-[#0a0f1a]"
           style={{ top: '13%', left: '45%', width: '53%', height: '80%' }}
         >
           <SpinningOrb />
