@@ -1,17 +1,41 @@
 import { Play } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Sigil, WordmarkHorizontal } from "./Sigil";
 
-const links = [
-  { label: "World", href: "#world" },
-  { label: "Agents", href: "#agents" },
-  { label: "Sigils", href: "#sigils" },
-  { label: "Preview", href: "#preview" },
-  { label: "Updates", href: "#updates" },
+const links: { label: string; href: string; sectionId: string }[] = [
+  { label: "World", href: "#world", sectionId: "world" },
+  { label: "Agents", href: "#agents", sectionId: "agents" },
+  { label: "Sigils", href: "#sigils", sectionId: "sigils" },
+  { label: "Preview", href: "#preview", sectionId: "preview" },
+  { label: "Updates", href: "#updates", sectionId: "updates" },
 ];
 
 export function Nav() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    const ids = links.map((l) => l.sectionId);
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8 h-[72px] flex items-center">
         <a href="#top" className="flex items-center gap-3">
           <Sigil size={46} />
@@ -20,7 +44,15 @@ export function Nav() {
 
         <nav className="hidden md:flex items-center gap-5 lg:gap-7 ml-8 lg:ml-14 text-[13px] lg:text-[15px] font-body font-medium text-parchment/70">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-gold transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className={`transition-colors ${
+                activeSection === l.sectionId
+                  ? "text-gold font-semibold"
+                  : "hover:text-gold"
+              }`}
+            >
               {l.label}
             </a>
           ))}
@@ -41,7 +73,13 @@ export function Nav() {
           </a>
         </div>
       </div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+      <div
+        className="w-full"
+        style={{
+          height: "2px",
+          background: "linear-gradient(90deg, rgba(241,196,109,0.05) 0%, rgba(241,196,109,0.7) 30%, rgba(241,196,109,0.9) 50%, rgba(241,196,109,0.7) 70%, rgba(241,196,109,0.05) 100%)",
+        }}
+      />
     </header>
   );
 }
