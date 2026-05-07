@@ -47,6 +47,14 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById(l.sectionId);
+                if (el) {
+                  const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
+              }}
               className={`transition-colors ${
                 activeSection === l.sectionId
                   ? "text-gold font-semibold"
@@ -67,6 +75,14 @@ export function Nav() {
           </a>
           <a
             href="#preview"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById("preview");
+              if (el) {
+                const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top, behavior: "smooth" });
+              }
+            }}
             className="hidden lg:inline-flex items-center gap-2 text-[10px] lg:text-[11px] uppercase tracking-[0.1em] font-body font-semibold px-3 lg:px-4 py-2 rounded-md bg-parchment/5 border border-parchment/30 text-parchment hover:bg-parchment/10 transition-colors whitespace-nowrap"
           >
             <Play className="w-3.5 h-3.5 fill-current" /> Watch Preview
