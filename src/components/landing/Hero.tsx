@@ -27,7 +27,7 @@ export function Hero() {
           src={hermesLogo}
           alt="Hermes World"
           className="absolute pointer-events-none z-10"
-          style={{ mixBlendMode: 'lighten', top: '5%', left: '32%', width: '60%', height: 'auto' }}
+          style={{ mixBlendMode: 'lighten', top: '8%', left: '32%', width: '60%', height: 'auto' }}
           draggable={false}
         />
 
