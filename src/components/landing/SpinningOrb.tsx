@@ -31,15 +31,18 @@ function createParticles(count: number): Particle[] {
   const particles: Particle[] = [];
   for (let i = 0; i < count; i++) {
     const pal = PALETTE[i % PALETTE.length];
-    const radiusBand = 0.18 + Math.random() * 0.28; // 18-46% of canvas half
+    // Some particles orbit near center, others further out
+    const radiusBand = Math.random() < 0.35
+      ? 0.03 + Math.random() * 0.15   // 3-18% — inner/center region
+      : 0.18 + Math.random() * 0.28;  // 18-46% — outer region
     particles.push({
       angle: Math.random() * Math.PI * 2,
       radius: radiusBand,
       speed: (0.003 + Math.random() * 0.008) * (Math.random() > 0.5 ? 1 : -1),
-      size: 2.5 + Math.random() * 4.5,
+      size: 4 + Math.random() * 6,
       color: pal.color,
       glowColor: pal.glow,
-      glowSize: 12 + Math.random() * 20,
+      glowSize: 20 + Math.random() * 30,
       orbitTilt: 0.55 + Math.random() * 0.45, // y squash 0.55–1.0
       phase: Math.random() * Math.PI * 2,
     });
