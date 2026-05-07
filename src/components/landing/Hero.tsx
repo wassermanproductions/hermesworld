@@ -24,8 +24,8 @@ export function Hero() {
           <img
             src={hermesLogo}
             alt="Hermes World"
-            className="absolute left-1/2 -translate-x-1/2 w-[70%] h-auto pointer-events-none"
-            style={{ top: '5%', mixBlendMode: 'lighten' }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-auto pointer-events-none"
+            style={{ mixBlendMode: 'lighten' }}
             draggable={false}
           />
         </div>
